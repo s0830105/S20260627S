@@ -173,6 +173,23 @@ ${guest.name}<br>
 桌位：${guest.table}號 ${guest.tableName}<br>
 ${status}
 `;
+
+document.querySelectorAll(".table").forEach(t=>{
+    t.style.background="#e7dddd";
+    t.style.border="6px solid #f4f4f4";
+});
+
+let target=document.getElementById("table"+guest.table);
+
+if(target){
+    target.style.background="#f4d7d7";
+    target.style.border="8px solid #c58b8b";
+
+    target.scrollIntoView({
+        behavior:"smooth",
+        block:"center"
+    });
+}
 }
 
 </script>
