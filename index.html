@@ -166,14 +166,14 @@ document.getElementById("result").innerHTML="查無資料";
 return;
 }
 
-let status=guest.arrived
+let status=guest.checkedIn
 ?'<span class="arrived">🟢 已到場</span>'
 :'<span class="notarrived">🔴 未到場</span>';
 
 document.getElementById("result").innerHTML=
 `
 ${guest.name}<br>
-桌位：${guest.table}<br>
+桌位：${guest.table}號 ${guest.tableName}<br>
 ${status}
 `;
 }
