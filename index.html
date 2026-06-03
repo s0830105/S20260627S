@@ -143,8 +143,11 @@ height:160px;
     </div>
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
-import { getDatabase } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-database.js";
-
+import {
+  getDatabase,
+  ref,
+  set
+} from "https://www.gstatic.com/firebasejs/12.0.0/firebase-database.js";
 const firebaseConfig = {
   apiKey: "AIzaSyBzOpsVAcKlrhjzed79LOCwss4WLcu50n0",
   authDomain: "s20260627-96401.firebaseapp.com",
@@ -157,6 +160,19 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
+window.testFirebase = function(){
+
+  set(
+    ref(db,"test"),
+    {
+      name:"紫菻",
+      time:Date.now()
+    }
+  );
+
+  alert("寫入成功");
+
+}
 console.log("Firebase連線成功");
 </script>
 <script>
