@@ -199,7 +199,20 @@ return;
 let status=guest.checkedIn
 ?'<span class="arrived">🟢 已到場</span>'
 :'<span class="notarrived">🔴 未到場</span>';
-
+let checkinBtn = guest.checkedIn
+? ''
+: `<button onclick="checkIn('${guest.name}')"
+style="
+margin-top:12px;
+padding:10px 20px;
+background:#b08b6d;
+color:white;
+border:none;
+border-radius:8px;
+cursor:pointer;
+">
+我要簽到
+</button>`;
 document.getElementById("result").innerHTML=
 `
 <div style="font-size:30px;color:red;">
@@ -208,7 +221,8 @@ document.getElementById("result").innerHTML=
 
 ${guest.name}<br>
 桌位：${guest.table}號 ${guest.tableName}<br>
-${status}
+${status}<br>
+${checkinBtn}
 `;
 
 document.querySelectorAll(".table").forEach(t=>{
@@ -227,6 +241,21 @@ if(target){
         block:"center"
     });
 }
+
+function checkIn(name){
+
+  const guest = guests.find(g => g.name === name);
+
+  if(!guest) return;
+
+  guest.checkedIn = true;
+
+  alert("簽到成功");
+
+  findGuest();
+}
+
+246 </script>
 }
 
 </script>
