@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>婚禮回覆系統</title>
+</head>
+
+<body>
+
+<h1>紫菻 ❤️ 培榮</h1>
+<h2>婚禮出席回覆</h2>
+
+<input id="name" placeholder="請輸入姓名">
+<button onclick="saveData()">送出</button>
+
+<p id="msg"></p>
+
+<script type="module">
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.2/firebase-app.js";
+
+import {
+  getDatabase,
+  ref,
+  push,
+  set
+} from "https://www.gstatic.com/firebasejs/10.13.2/firebase-database.js";
+
+const firebaseConfig = {
+  databaseURL:
+  "https://s20260627-96401-default-rtdb.asia-southeast1.firebasedatabase.app"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getDatabase(app);
+
+window.saveData = async function(){
+
+  const name =
+  document.getElementById("name").value;
+
+  if(!name){
+    alert("請輸入姓名");
+    return;
+  }
+
+  const guestRef =
+  push(ref(db,"rsvp"));
+
+  await set(guestRef,{
+    name:name,
+    createTime:Date.now()
+  });
+
+  document.getElementById("msg").innerText =
+  "送出成功";
+
+};
+
+</script>
+
+</body>
+</html>
