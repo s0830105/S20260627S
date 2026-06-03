@@ -241,22 +241,23 @@ if(target){
         block:"center"
     });
 }
-
+}
+    
 function checkIn(name){
+const guest = guests.find(g => g.name === name);
 
-  const guest = guests.find(g => g.name === name);
+  
+if(!guest) return;
 
-  if(!guest) return;
+guest.checkedIn = true;
 
-  guest.checkedIn = true;
+alert("簽到成功");
 
-  alert("簽到成功");
-
-  findGuest();
+findGuest();
 }
 
-246 </script>
-}
+
+
 
 </script>
 
