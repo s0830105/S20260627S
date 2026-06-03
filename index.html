@@ -169,6 +169,10 @@ let status=guest.checkedIn
 
 document.getElementById("result").innerHTML=
 `
+<div style="font-size:30px;color:red;">
+⬇ 您的位置 ⬇
+</div>
+
 ${guest.name}<br>
 桌位：${guest.table}號 ${guest.tableName}<br>
 ${status}
@@ -182,9 +186,9 @@ document.querySelectorAll(".table").forEach(t=>{
 let target=document.getElementById("table"+guest.table);
 
 if(target){
-    target.style.background="#ffb6c1";
-    target.style.border="10px solid red";
-    target.style.transform="scale(1.2)";
+    target.style.background="#ffd6d6";
+    target.style.border="12px solid red";
+    target.style.transform="scale(1.35)";
     target.scrollIntoView({
         behavior:"smooth",
         block:"center"
