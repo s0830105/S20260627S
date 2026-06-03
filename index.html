@@ -243,17 +243,29 @@ if(target){
 }
 
     
-function checkIn(name){
+async function checkIn(name){
+
 const guest = guests.find(g => g.name === name);
 
-  
 if(!guest) return;
+
+await set(
+    ref(db,"rsvp/"+guest.id),
+    {
+        id: guest.id,
+        name: guest.name,
+        table: guest.table,
+        tableName: guest.tableName,
+        checkinTime: Date.now()
+    }
+);
 
 guest.checkedIn = true;
 
 alert("簽到成功");
 
 findGuest();
+
 }
 
 
