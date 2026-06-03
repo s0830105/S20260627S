@@ -146,7 +146,8 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebas
 import {
   getDatabase,
   ref,
-  set
+  set,
+  get
 } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-database.js";
 const firebaseConfig = {
   apiKey: "AIzaSyBzOpsVAcKlrhjzed79LOCwss4WLcu50n0",
@@ -178,12 +179,12 @@ console.log("Firebase連線成功");
 <script>
 
 let guests=[];
-
 fetch("guests.json")
 .then(res=>res.json())
 .then(data=>{
-guests=data;
+    guests=data;
 });
+
 
 function findGuest(){
 
