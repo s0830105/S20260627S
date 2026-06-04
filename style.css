@@ -1,1 +1,33 @@
+body{
+    margin:0;
+    padding:0;
+    font-family:"Microsoft JhengHei";
+    background:#f7f7f7;
+}
 
+.container{
+    max-width:500px;
+    margin:auto;
+    padding:30px;
+}
+
+h1{
+    text-align:center;
+}
+
+input{
+    width:100%;
+    padding:12px;
+    box-sizing:border-box;
+    margin-bottom:10px;
+}
+
+button{
+    width:100%;
+    padding:12px;
+    cursor:pointer;
+}
+
+#result{
+    margin-top:20px;
+}
