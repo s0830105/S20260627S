@@ -21,6 +21,41 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
 const db = getDatabase(app);
+async function loadStats(){
+
+  const response =
+    await fetch("./guests.json");
+
+  const guests =
+    await response.json();
+
+  const snapshot =
+    await get(
+      ref(db, "checkins")
+    );
+
+  const checkedCount =
+    snapshot.exists()
+      ? Object.keys(snapshot.val()).length
+      : 0;
+
+  const totalCount =
+    guests.length;
+
+  const unCheckedCount =
+    totalCount - checkedCount;
+
+  const rate =
+    Math.round(
+      checkedCount / totalCount * 100
+    );
+
+  document.getElementById("stats").innerHTML = `
+    🟢 已簽到：${checkedCount} 人<br>
+    🔴 未簽到：${unCheckedCount} 人<br>
+    📊 簽到率：${rate}%
+  `;
+}
 async function searchGuest() {
 
   const name =
@@ -156,7 +191,8 @@ async function checkIn(name){
   );
 
   alert(name + " 簽到成功");
-
+  loadStats();
 }
 
 window.checkIn = checkIn;
+loadStats();
