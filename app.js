@@ -208,7 +208,25 @@ loadStats();
 function showMap(table){
 
   table = Number(table);
+const positions = {
 
+  1:{ top:"27%", left:"50%" },
+
+  2:{ top:"43%", left:"82%" },
+
+  3:{ top:"43%", left:"18%" },
+
+  4:{ top:"66%", left:"18%" },
+
+  5:{ top:"66%", left:"82%" },
+
+  6:{ top:"89%", left:"18%" },
+
+  7:{ top:"89%", left:"50%" },
+
+  8:{ top:"89%", left:"82%" }
+
+};
 const sizes = {
   1: 130,
   2: 95,
