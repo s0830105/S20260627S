@@ -78,7 +78,7 @@
   },
   {
     "id": 12,
-    "name": "謝慈恩)",
+    "name": "謝慈恩+1",
     "table": 1,
     "tableName": "蒙福桌",
     "checkedIn": false
@@ -113,7 +113,7 @@
   },
   {
     "id": 17,
-    "name": "洪俊瑛",
+    "name": "洪俊瑛+1",
     "table": 2,
     "tableName": "永恆桌",
     "checkedIn": false
@@ -204,21 +204,21 @@
   },
   {
     "id": 30,
-    "name": "林欣儀",
+    "name": "林欣儀+1",
     "table": 3,
     "tableName": "家宴桌",
     "checkedIn": false
   },
   {
     "id": 31,
-    "name": "林欣儀",
+    "name": "林欣儀+2",
     "table": 3,
     "tableName": "家宴桌",
     "checkedIn": false
   },
   {
     "id": 32,
-    "name": "林欣儀",
+    "name": "林欣儀+3",
     "table": 3,
     "tableName": "家宴桌",
     "checkedIn": false
@@ -281,7 +281,7 @@
   },
   {
     "id": 41,
-    "name": "張哲宇",
+    "name": "張哲宇+1",
     "table": 4,
     "tableName": "勇士桌",
     "checkedIn": false
@@ -323,14 +323,14 @@
   },
   {
     "id": 47,
-    "name": "陳沛禔",
+    "name": "陳沛禔+1",
     "table": 5,
     "tableName": "眷愛桌",
     "checkedIn": false
   },
   {
     "id": 48,
-    "name": "陳沛禔",
+    "name": "陳沛禔+2",
     "table": 5,
     "tableName": "眷愛桌",
     "checkedIn": false
@@ -344,21 +344,21 @@
   },
   {
     "id": 50,
-    "name": "陳湘晴",
+    "name": "陳湘晴+1",
     "table": 5,
     "tableName": "眷愛桌",
     "checkedIn": false
   },
   {
     "id": 51,
-    "name": "陳湘晴",
+    "name": "陳湘晴+2",
     "table": 5,
     "tableName": "眷愛桌",
     "checkedIn": false
   },
   {
     "id": 52,
-    "name": "陳湘晴",
+    "name": "陳湘晴+3",
     "table": 5,
     "tableName": "眷愛桌",
     "checkedIn": false
@@ -379,7 +379,7 @@
   },
   {
     "id": 55,
-    "name": "張子瑄",
+    "name": "張子瑄+1",
     "table": 6,
     "tableName": "時光桌",
     "checkedIn": false
@@ -400,42 +400,35 @@
   },
   {
     "id": 58,
-    "name": "郭泓佑",
+    "name": "郭泓佑+1",
     "table": 6,
     "tableName": "時光桌",
     "checkedIn": false
   },
   {
     "id": 59,
-    "name": "郭泓佑",
+    "name": "郭泓佑+2",
     "table": 6,
     "tableName": "時光桌",
     "checkedIn": false
   },
   {
     "id": 60,
-    "name": "郭泓佑",
-    "table": 6,
-    "tableName": "時光桌",
-    "checkedIn": false
-  },
-   {
-    "id": 60,
-    "name": "林勝瑋",
+    "name": "郭泓佑+3",
     "table": 6,
     "tableName": "時光桌",
     "checkedIn": false
   },
   {
     "id": 61,
-    "name": "葛明轅",
-    "table": 7,
-    "tableName": "旅程桌",
+    "name": "林勝瑋",
+    "table": 6,
+    "tableName": "時光桌",
     "checkedIn": false
   },
   {
     "id": 62,
-    "name": "胡文瀗",
+    "name": "葛明轅",
     "table": 7,
     "tableName": "旅程桌",
     "checkedIn": false
@@ -449,21 +442,21 @@
   },
   {
     "id": 64,
-    "name": "胡文瀗",
+    "name": "胡文瀗+1",
     "table": 7,
     "tableName": "旅程桌",
     "checkedIn": false
   },
   {
     "id": 65,
-    "name": "林耕儀",
+    "name": "胡文瀗+2",
     "table": 7,
     "tableName": "旅程桌",
     "checkedIn": false
   },
   {
     "id": 66,
-    "name": "洪楙淳",
+    "name": "林耕儀",
     "table": 7,
     "tableName": "旅程桌",
     "checkedIn": false
@@ -477,14 +470,14 @@
   },
   {
     "id": 68,
-    "name": "陳暉璋",
+    "name": "洪楙淳+1",
     "table": 7,
     "tableName": "旅程桌",
     "checkedIn": false
   },
   {
     "id": 69,
-    "name": "游詠淳",
+    "name": "陳暉璋",
     "table": 7,
     "tableName": "旅程桌",
     "checkedIn": false
@@ -498,9 +491,9 @@
   },
   {
     "id": 71,
-    "name": "凌瑋璘",
-    "table": 8,
-    "tableName": "同心桌",
+    "name": "游詠淳+1",
+    "table": 7,
+    "tableName": "旅程桌",
     "checkedIn": false
   },
   {
@@ -512,21 +505,21 @@
   },
   {
     "id": 73,
-    "name": "張筱琦",
+    "name": "凌瑋璘+1",
     "table": 8,
     "tableName": "同心桌",
     "checkedIn": false
   },
   {
     "id": 74,
-    "name": "王俊甫",
+    "name": "張筱琦",
     "table": 8,
     "tableName": "同心桌",
     "checkedIn": false
   },
   {
     "id": 75,
-    "name": "潘怡璇",
+    "name": "王俊甫",
     "table": 8,
     "tableName": "同心桌",
     "checkedIn": false
@@ -540,7 +533,7 @@
   },
   {
     "id": 77,
-    "name": "胡于婷",
+    "name": "潘怡璇+1",
     "table": 8,
     "tableName": "同心桌",
     "checkedIn": false
@@ -548,6 +541,13 @@
   {
     "id": 78,
     "name": "胡于婷",
+    "table": 8,
+    "tableName": "同心桌",
+    "checkedIn": false
+  },
+  {
+    "id": 79,
+    "name": "胡于婷+1",
     "table": 8,
     "tableName": "同心桌",
     "checkedIn": false
