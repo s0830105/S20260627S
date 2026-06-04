@@ -39,7 +39,14 @@ async function searchGuest() {
     guests.find(
       g => g.name === name
     );
+const checkinSnapshot =
+  await get(
+    ref(db, name)
+  );
 
+const isCheckedIn =
+  checkinSnapshot.exists();
+  
   if (!guest) {
 
     result.innerHTML =
@@ -64,7 +71,7 @@ result.innerHTML = `
   <p>桌名：${guest.tableName}</p>
 
   <p>
-  ${guest.checkedIn ? "🟢 已簽到" : "🔴 未簽到"}
+${isCheckedIn ? "🟢 已簽到" : "🔴 未簽到"}
   </p>
 
 <button onclick="checkIn('${guest.name}')">
