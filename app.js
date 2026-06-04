@@ -42,7 +42,9 @@ result.innerHTML = `
 
   <hr>
 
-  <h4>同桌貴賓</h4>
+ <h1 style="color:red">
+測試成功
+</h1>
 
   ${guestList}
 `;
