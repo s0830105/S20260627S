@@ -126,7 +126,10 @@ ${
   <h4>同桌貴賓</h4>
 
   ${guestList}
-`;
+  `;
+
+showMap(guest.table);
+
 }
 
 window.searchGuest = searchGuest;
