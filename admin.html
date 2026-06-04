@@ -44,28 +44,91 @@ async function loadAdmin() {
   const checkedNames =
     Object.keys(checkedData);
 
-  const checkedGuests =
-    guests.filter(
+ const checkedGuests =
+  guests
+    .filter(
       g => checkedNames.includes(g.name)
-    );
+    )
+    .sort((a,b)=>{
+
+      const timeA =
+        new Date(
+          checkedData[a.name]?.time || 0
+        );
+
+      const timeB =
+        new Date(
+          checkedData[b.name]?.time || 0
+        );
+
+      return timeB - timeA;
+
+    });
 
   const uncheckedGuests =
     guests.filter(
       g => !checkedNames.includes(g.name)
     );
 
-  document.getElementById("summary").innerHTML = `
-    <h2>📊 婚宴簽到統計</h2>
-    <p>總賓客：${guests.length} 人</p>
-    <p>🟢 已簽到：${checkedGuests.length} 人</p>
-    <p>🔴 未簽到：${uncheckedGuests.length} 人</p>
-    <p>📈 簽到率：${Math.round(checkedGuests.length / guests.length * 100)}%</p>
-  `;
+document.getElementById("summary").innerHTML = `
+<h2>📊 婚宴簽到統計</h2>
 
-  document.getElementById("checked").innerHTML =
-    checkedGuests
-      .map(g=>`${g.name}（${g.tableName}）`)
-      .join("<br>");
+<p>總賓客：${guests.length} 人</p>
+
+<p>🟢 已簽到：${checkedGuests.length} 人</p>
+
+<p>🔴 未簽到：${uncheckedGuests.length} 人</p>
+
+<p>📈 簽到率：${Math.round(checkedGuests.length / guests.length * 100)}%</p>
+`;
+
+const tableMap = {};
+
+guests.forEach(g=>{
+
+  if(!tableMap[g.tableName]){
+
+    tableMap[g.tableName]={
+      total:0,
+      checked:0
+    };
+
+  }
+
+  tableMap[g.tableName].total++;
+
+  if(checkedNames.includes(g.name)){
+
+    tableMap[g.tableName].checked++;
+
+  }
+
+});
+
+document.getElementById("tableStats").innerHTML =
+Object.entries(tableMap)
+.map(([table,data])=>`
+${table}：${data.checked}/${data.total} 人<br>
+`)
+.join("");
+
+ document.getElementById("checked").innerHTML =
+  checkedGuests
+    .map(g=>{
+
+      const time =
+        checkedData[g.name]?.time || "";
+
+      return `
+      ${g.name}
+      （${g.tableName}）
+      <br>
+      ⏰ ${time}
+      <hr>
+      `;
+
+    })
+    .join("");
 
   document.getElementById("unchecked").innerHTML =
     uncheckedGuests
@@ -106,7 +169,11 @@ body{
 <div id="summary" class="box">
 載入中...
 </div>
-
+<div class="box">
+<h2>🍽️ 桌次統計</h2>
+<div id="tableStats"></div>
+</div>
+  
 <div class="box">
 <h2>🟢 已簽到名單</h2>
 <div id="checked"></div>
