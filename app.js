@@ -240,16 +240,13 @@ console.log("位置=",pos);
         class="floor-map"
       >
 
-     <div
+    <div
   class="highlight"
   style="
-    top:${pos.top};
-    left:${pos.left};
-    width:${pos.size};
-    height:${pos.size};
+    top:calc(${pos.top} - 8px);
+    left:calc(${pos.left} - 8px);
   ">
 </div>
-
     </div>
   `;
 }
