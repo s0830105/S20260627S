@@ -8,78 +8,51 @@
 
 <style>
 body{
-font-family:Microsoft JhengHei,sans-serif;
-background:#f8f4f1;
-margin:0;
-padding:20px;
-text-align:center;
+    font-family:"Microsoft JhengHei",sans-serif;
+    background:#faf7f2;
+    text-align:center;
+    padding:20px;
 }
 
 h1{
-color:#8c6b4f;
+    color:#7d5a50;
 }
 
 input{
-width:80%;
-max-width:400px;
-padding:12px;
-font-size:18px;
-border:1px solid #ccc;
-border-radius:10px;
+    width:300px;
+    max-width:90%;
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:8px;
 }
 
 button{
-padding:12px 25px;
-font-size:18px;
-background:#b99267;
-color:white;
-border:none;
-border-radius:10px;
-margin-top:10px;
-cursor:pointer;
+    margin-top:10px;
+    padding:12px 24px;
+    background:#b08b6d;
+    color:white;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+#suggestions{
+    max-width:400px;
+    margin:auto;
+    text-align:left;
+}
+
+.suggestion{
+    background:white;
+    margin:5px 0;
+    padding:10px;
+    border-radius:6px;
+    cursor:pointer;
 }
 
 #result{
-margin-top:25px;
-font-size:24px;
-font-weight:bold;
-}
-
-.arrived{
-color:green;
-}
-
-.notarrived{
-color:red;
-}
-
-.hall{
-    width:1000px;
-    margin:40px auto 0 auto;
-}
-
-.table{
-  width:180px;
-  height:180px;
-  border-radius:50%;
-  border:6px solid #f4f4f4;
-  background:#e7dddd;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  font-size:22px;
-}
-    #table1{
-  width:220px;
-  height:220px;
-  font-size:36px;
-  margin:auto;
-}
-.main{
-grid-column:2;
-width:160px;
-height:160px;
+    margin-top:20px;
+    font-size:22px;
 }
 </style>
 
@@ -88,189 +61,57 @@ height:160px;
 
 <h1>婚宴座位查詢系統</h1>
 
-<input id="searchName" placeholder="請輸入姓名">
-<br><br>
-<button onclick="findGuest()">查詢座位</button>
+<input
+id="searchName"
+placeholder="請輸入姓名">
+
+<br>
+
+<button onclick="findGuest()">
+查詢座位
+</button>
+
+<div id="suggestions"></div>
 
 <div id="result"></div>
-<div class="hall">
 
-  <div style="text-align:center;margin-bottom:80px;">
-    <div class="table" id="table1">
-      <div>1</div>
-      <div>蒙福桌</div>
-    </div>
-  </div>
-
-<div style="display:flex;justify-content:space-between;margin:50px;">
-    <div class="table" id="table3">
-      <div>3</div>
-      <div>家宴桌</div>
-    </div>
-
-    <div class="table" id="table2">
-      <div>2</div>
-      <div>永恆桌</div>
-    </div>
-  </div>
-
-<div style="display:flex;justify-content:space-between;margin:50px;">
-    <div class="table" id="table4">
-      <div>4</div>
-      <div>眷愛桌</div>
-    </div>
-
-    <div class="table" id="table5">
-      <div>5</div>
-      <div>勇士桌</div>
-    </div>
-  </div>
-
-  <div style="display:flex;justify-content:space-around;margin-top:80px;">
-    <div class="table" id="table6">
-      <div>6</div>
-      <div>時光桌</div>
-    </div>
-
-    <div class="table" id="table7">
-      <div>7</div>
-      <div>同心桌</div>
-    </div>
-
-    <div class="table" id="table8">
-      <div>8</div>
-      <div>旅程桌</div>
-    </div>
-<script type="module">
-import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
-import {
-  getDatabase,
-  ref,
-  set,
-  get
-} from "https://www.gstatic.com/firebasejs/12.0.0/firebase-database.js";
-const firebaseConfig = {
-  apiKey: "AIzaSyBzOpsVAcKlrhjzed79LOCwss4WLcu50n0",
-  authDomain: "s20260627-96401.firebaseapp.com",
-  databaseURL: "https://s20260627-96401-default-rtdb.asia-southeast1.firebasedatabase.app",
-  projectId: "s20260627-96401",
-  storageBucket: "s20260627-96401.firebasestorage.app",
-  messagingSenderId: "738740962399",
-  appId: "1:738740962399:web:0d7405a154c06e306b47ea"
-};
-
-const app = initializeApp(firebaseConfig);
-const db = getDatabase(app);
-window.testFirebase = function(){
-
-  set(
-    ref(db,"test"),
-    {
-      name:"紫菻",
-      time:Date.now()
-    }
-  );
-
-  alert("寫入成功");
-
-}
-console.log("Firebase連線成功");
-</script>
 <script>
 
 let guests=[];
+
 fetch("guests.json")
 .then(res=>res.json())
 .then(data=>{
     guests=data;
 });
 
-
 function findGuest(){
 
-let name=document.getElementById("searchName").value.trim();
+    const name=
+    document.getElementById("searchName")
+    .value
+    .trim();
 
-let guest=guests.find(g=>g.name===name);
+    const guest=
+    guests.find(g=>g.name===name);
 
-if(!guest){
-document.getElementById("result").innerHTML="查無資料";
-return;
-}
-
-let status=guest.checkedIn
-?'<span class="arrived">🟢 已到場</span>'
-:'<span class="notarrived">🔴 未到場</span>';
-let checkinBtn = guest.checkedIn
-? ''
-: `<button onclick="checkIn('${guest.name}')"
-style="
-margin-top:12px;
-padding:10px 20px;
-background:#b08b6d;
-color:white;
-border:none;
-border-radius:8px;
-cursor:pointer;
-">
-我要簽到
-</button>`;
-document.getElementById("result").innerHTML=
-`
-<div style="font-size:30px;color:red;">
-⬇ 您的位置 ⬇
-</div>
-
-${guest.name}<br>
-桌位：${guest.table}號 ${guest.tableName}<br>
-${status}<br>
-${checkinBtn}
-`;
-
-document.querySelectorAll(".table").forEach(t=>{
-    t.style.background="#e7dddd";
-    t.style.border="6px solid #f4f4f4";
-});
-
-let target=document.getElementById("table"+guest.table);
-
-if(target){
-    target.style.background="#ffd6d6";
-    target.style.border="12px solid red";
-    target.style.transform="scale(1.35)";
-    target.scrollIntoView({
-        behavior:"smooth",
-        block:"center"
-});
-}
-
-    
-async function checkIn(name){
-
-const guest = guests.find(g => g.name === name);
-
-if(!guest) return;
-
-await set(
-    ref(db,"rsvp/"+guest.id),
-    {
-        id: guest.id,
-        name: guest.name,
-        table: guest.table,
-        tableName: guest.tableName,
-        checkinTime: Date.now()
+    if(!guest){
+        document.getElementById("result")
+        .innerHTML="查無資料";
+        return;
     }
-);
 
-guest.checkedIn = true;
+    document.getElementById("result")
+    .innerHTML=
+    `
+    <h2>${guest.name}</h2>
 
-alert("簽到成功");
+    桌位：
+    ${guest.table}號桌
 
-findGuest();
-
+    ${guest.tableName}
+    `;
 }
-
-
-
 
 </script>
 
