@@ -51,3 +51,52 @@ result.innerHTML = `
 }
 
 window.searchGuest = searchGuest;
+
+const searchInput =
+document.getElementById("searchInput");
+
+const suggestions =
+document.getElementById("suggestions");
+
+searchInput.addEventListener(
+  "input",
+  async function () {
+
+    const keyword =
+      this.value.trim();
+
+    if (!keyword) {
+
+      suggestions.innerHTML = "";
+
+      return;
+    }
+
+    const response =
+      await fetch("./guests.json");
+
+    const guests =
+      await response.json();
+
+    const matched =
+      guests.filter(
+        g => g.name.includes(keyword)
+      );
+
+    suggestions.innerHTML =
+      matched
+      .slice(0, 10)
+      .map(g => `
+        <div
+          class="suggestion-item"
+          onclick="
+            document.getElementById('searchInput').value='${g.name}';
+            document.getElementById('suggestions').innerHTML='';
+          ">
+          ${g.name}
+        </div>
+      `)
+      .join("");
+
+  }
+);
