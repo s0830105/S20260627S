@@ -194,11 +194,13 @@ async function checkIn(name){
     }
   );
 
-  alert(name + " 簽到成功");
+ alert(name + " 簽到成功");
 
-  await searchGuest();
+document.getElementById("searchInput").value = name;
 
-  loadStats();
+await searchGuest();
+
+await loadStats();
 }
 window.checkIn = checkIn;
 loadStats();
