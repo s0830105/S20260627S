@@ -157,7 +157,7 @@ guests.filter(g=>
     });
 
 }
-async function findGuest(){
+window.findGuest = async function(){
 
     const name=
     document.getElementById("searchName")
@@ -208,7 +208,7 @@ ${guest.tableName}
 ${checkinBtn}
 `;
 }
-async function checkIn(name){
+window.checkIn = async function(name){
 
   const guest =
   guests.find(g=>g.name===name);
@@ -232,8 +232,7 @@ async function checkIn(name){
 
 }
 
-async function cancelCheckIn(name){
-
+window.cancelCheckIn = async function(name){
   const guest =
   guests.find(g=>g.name===name);
 
