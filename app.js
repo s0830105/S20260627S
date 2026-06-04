@@ -76,11 +76,15 @@ result.innerHTML = `
 
   <p>
 ${isCheckedIn ? "🟢 已簽到" : "🔴 未簽到"}
-  </p>
+</p>
 
-<button onclick="checkIn('${guest.name}')">
-我要簽到
-</button>
+${
+  isCheckedIn
+    ? `<p>簽到時間：${checkinSnapshot.val().time}</p>`
+    : `<button onclick="checkIn('${guest.name}')">
+         我要簽到
+       </button>`
+}
   <hr>
 
   <h4>同桌貴賓</h4>
