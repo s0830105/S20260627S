@@ -213,22 +213,21 @@ function showMap(table){
 
   1:{top:'22%',left:'42%'},
 
-  2:{top:'39%',left:'76%'},
+  2:{top:'38%',left:'63%'},
 
-  3:{top:'39%',left:'8%'},
+  3:{top:'38%',left:'13%'},
 
-  4:{top:'60%',left:'8%'},
+  4:{top:'58%',left:'13%'},
 
-  5:{top:'60%',left:'76%'},
+  5:{top:'58%',left:'63%'},
 
-  6:{top:'84%',left:'7%'},
+  6:{top:'81%',left:'13%'},
 
-  7:{top:'84%',left:'43%'},
+  7:{top:'81%',left:'42%'},
 
-  8:{top:'84%',left:'76%'}
+  8:{top:'81%',left:'63%'}
 
 };
-
   const pos = positions[table];
 console.log("桌號=",table);
 console.log("位置=",pos);
