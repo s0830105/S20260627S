@@ -1,1 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>婚宴簽到後台</title>
 
+<script type="module">
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-app.js";
+
+import {
+  getDatabase,
+  ref,
+  get
+} from "https://www.gstatic.com/firebasejs/11.10.0/firebase-database.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCY-ZuOIT0gJsqA5ep1WcMcQpw8Hk_EdpI",
+  authDomain: "s20260627-ea381.firebaseapp.com",
+  databaseURL: "https://s20260627-ea381-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "s20260627-ea381",
+  storageBucket: "s20260627-ea381.firebasestorage.app",
+  messagingSenderId: "282846563979",
+  appId: "1:282846563979:web:6e461c51d133600bbd8e8e",
+  measurementId: "G-W9VQDZV37P"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getDatabase(app);
+
+async function loadAdmin() {
+
+  const response = await fetch("./guests.json");
+  const guests = await response.json();
+
+  const snapshot = await get(ref(db,"checkins"));
+
+  const checkedData =
+    snapshot.exists()
+      ? snapshot.val()
+      : {};
+
+  const checkedNames =
+    Object.keys(checkedData);
+
+  const checkedGuests =
+    guests.filter(
+      g => checkedNames.includes(g.name)
+    );
+
+  const uncheckedGuests =
+    guests.filter(
+      g => !checkedNames.includes(g.name)
+    );
+
+  document.getElementById("summary").innerHTML = `
+    <h2>📊 婚宴簽到統計</h2>
+    <p>總賓客：${guests.length} 人</p>
+    <p>🟢 已簽到：${checkedGuests.length} 人</p>
+    <p>🔴 未簽到：${uncheckedGuests.length} 人</p>
+    <p>📈 簽到率：${Math.round(checkedGuests.length / guests.length * 100)}%</p>
+  `;
+
+  document.getElementById("checked").innerHTML =
+    checkedGuests
+      .map(g=>`${g.name}（${g.tableName}）`)
+      .join("<br>");
+
+  document.getElementById("unchecked").innerHTML =
+    uncheckedGuests
+      .map(g=>`${g.name}（${g.tableName}）`)
+      .join("<br>");
+}
+
+loadAdmin();
+
+setInterval(loadAdmin,3000);
+
+</script>
+
+<style>
+
+body{
+  font-family:Arial;
+  max-width:1000px;
+  margin:auto;
+  padding:20px;
+}
+
+.box{
+  border:1px solid #ddd;
+  border-radius:10px;
+  padding:20px;
+  margin-top:20px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>婚宴簽到後台</h1>
+
+<div id="summary" class="box">
+載入中...
+</div>
+
+<div class="box">
+<h2>🟢 已簽到名單</h2>
+<div id="checked"></div>
+</div>
+
+<div class="box">
+<h2>🔴 未簽到名單</h2>
+<div id="unchecked"></div>
+</div>
+
+</body>
+</html>
