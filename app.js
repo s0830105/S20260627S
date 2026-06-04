@@ -128,7 +128,16 @@ searchInput.addEventListener(
   }
 );
 
-function checkIn(name){
+async function checkIn(name){
+
+  await set(
+    ref(db, "checkins/" + name),
+    {
+      name: name,
+      checkedIn: true,
+      time: new Date().toLocaleString()
+    }
+  );
 
   alert(name + " 簽到成功");
 
