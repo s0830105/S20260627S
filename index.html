@@ -206,14 +206,15 @@ ${guest.tableName}
 <p>${status}</p>
 
 ${checkinBtn}
-${checkinBtn}
 
 <div style="margin-top:20px">
 📍 您的位置：
 <h2>${guest.table}號桌 ${guest.tableName}</h2>
 </div>
+
+${showTableMap(guest.table)}
 `;
-}
+
 window.checkIn = async function(name){
 
   const guest =
@@ -252,6 +253,68 @@ window.cancelCheckIn = async function(name){
 
   findGuest();
 
+}
+function showTableMap(tableNo){
+
+return `
+<div style="
+function showTableMap(tableNo){
+
+return `
+<div style="margin-top:30px;padding:20px;border:1px solid #ddd;border-radius:15px;background:#fffaf8;">
+
+<h3>📍 現場桌位位置</h3>
+
+<div style="text-align:center;margin:20px 0;">
+<div style="display:inline-block;padding:10px 30px;background:#d8a48f;color:white;border-radius:30px;">
+舞台
+</div>
+</div>
+
+<div style="display:flex;justify-content:center;margin:20px 0;">
+<div style="${tableNo===1?'background:#4CAF50;color:white;':''}padding:20px;border:1px solid #ccc;border-radius:50%;">
+1 蒙福桌
+</div>
+</div>
+
+<div style="display:flex;justify-content:space-around;margin:20px 0;">
+<div style="${tableNo===3?'background:#4CAF50;color:white;':''}padding:20px;border:1px solid #ccc;border-radius:50%;">
+3 家宴桌
+</div>
+
+<div style="${tableNo===2?'background:#4CAF50;color:white;':''}padding:20px;border:1px solid #ccc;border-radius:50%;">
+2 永恆桌
+</div>
+</div>
+
+<div style="display:flex;justify-content:space-around;margin:20px 0;">
+<div style="${tableNo===4?'background:#4CAF50;color:white;':''}padding:20px;border:1px solid #ccc;border-radius:50%;">
+4 眷愛桌
+</div>
+
+<div style="${tableNo===5?'background:#4CAF50;color:white;':''}padding:20px;border:1px solid #ccc;border-radius:50%;">
+5 勇士桌
+</div>
+</div>
+
+<div style="display:flex;justify-content:space-around;margin:20px 0;">
+<div style="${tableNo===6?'background:#4CAF50;color:white;':''}padding:20px;border:1px solid #ccc;border-radius:50%;">
+6 時光桌
+</div>
+
+<div style="${tableNo===7?'background:#4CAF50;color:white;':''}padding:20px;border:1px solid #ccc;border-radius:50%;">
+7 同心桌
+</div>
+
+<div style="${tableNo===8?'background:#4CAF50;color:white;':''}padding:20px;border:1px solid #ccc;border-radius:50%;">
+8 旅程桌
+</div>
+</div>
+
+</div>
+`;
+
+}
 }
 </script>
 
