@@ -84,7 +84,53 @@ fetch("guests.json")
 .then(data=>{
     guests=data;
 });
+document
+.getElementById("searchName")
+.addEventListener("input",showSuggestions);
 
+function showSuggestions(){
+
+    const keyword=
+    document.getElementById("searchName")
+    .value
+    .trim();
+
+    const box=
+    document.getElementById("suggestions");
+
+    box.innerHTML="";
+
+    if(keyword.length===0)return;
+
+    const matches=
+    guests.filter(g=>
+        g.name.includes(keyword)
+    );
+
+    matches.slice(0,10).forEach(g=>{
+
+        const div=
+        document.createElement("div");
+
+        div.className="suggestion";
+
+        div.innerText=g.name;
+
+        div.onclick=()=>{
+
+            document.getElementById("searchName").value=g.name;
+
+            box.innerHTML="";
+
+            findGuest();
+
+        };
+
+        box.appendChild(div);
+
+    });
+
+}
 function findGuest(){
 
     const name=
