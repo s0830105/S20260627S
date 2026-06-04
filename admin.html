@@ -203,3 +203,44 @@ body{
 
 </body>
 </html>
+
+#mapContainer{
+  margin-top:20px;
+  text-align:center;
+}
+
+.map-wrapper{
+  position:relative;
+  display:inline-block;
+  width:100%;
+  max-width:800px;
+}
+
+.floor-map{
+  width:100%;
+  border-radius:12px;
+}
+
+.highlight{
+  position:absolute;
+  width:90px;
+  height:90px;
+  border:6px solid #00ff66;
+  border-radius:50%;
+  animation:flash 1s infinite;
+}
+
+@keyframes flash{
+  0%{
+    opacity:1;
+    box-shadow:0 0 10px #00ff66;
+  }
+  50%{
+    opacity:.3;
+    box-shadow:0 0 30px #00ff66;
+  }
+  100%{
+    opacity:1;
+    box-shadow:0 0 10px #00ff66;
+  }
+}
