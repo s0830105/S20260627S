@@ -31,3 +31,19 @@ button{
 #result{
     margin-top:20px;
 }
+
+#suggestions{
+    background:white;
+    border:1px solid #ddd;
+    max-height:200px;
+    overflow-y:auto;
+}
+
+.suggestion-item{
+    padding:10px;
+    cursor:pointer;
+}
+
+.suggestion-item:hover{
+    background:#f0f0f0;
+}
