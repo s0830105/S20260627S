@@ -211,53 +211,21 @@ function showMap(table){
 
   const positions = {
 
-  1:{
-    top:'28%',
-    left:'50%',
-    size:'160px'
-  },
+  1:{top:'22%',left:'42%'},
 
-  2:{
-    top:'47%',
-    left:'82%',
-    size:'120px'
-  },
+  2:{top:'39%',left:'76%'},
 
-  3:{
-    top:'47%',
-    left:'18%',
-    size:'120px'
-  },
+  3:{top:'39%',left:'8%'},
 
-  4:{
-    top:'67%',
-    left:'18%',
-    size:'130px'
-  },
+  4:{top:'60%',left:'8%'},
 
-  5:{
-    top:'67%',
-    left:'82%',
-    size:'130px'
-  },
+  5:{top:'60%',left:'76%'},
 
-  6:{
-    top:'89%',
-    left:'18%',
-    size:'140px'
-  },
+  6:{top:'84%',left:'7%'},
 
-  7:{
-    top:'89%',
-    left:'50%',
-    size:'140px'
-  },
+  7:{top:'84%',left:'43%'},
 
-  8:{
-    top:'89%',
-    left:'82%',
-    size:'140px'
-  }
+  8:{top:'84%',left:'76%'}
 
 };
 
