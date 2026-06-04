@@ -209,24 +209,15 @@ function showMap(table){
 
   table = Number(table);
 
- const positions = {
-
-  1:{top:'31%', left:'50%'},
-
-  2:{top:'44%', left:'79%'},
-
-  3:{top:'44%', left:'21%'},
-
-  4:{top:'64%', left:'21%'},
-
-  5:{top:'64%', left:'79%'},
-
-  6:{top:'86%', left:'21%'},
-
-  7:{top:'86%', left:'50%'},
-
-  8:{top:'86%', left:'79%'}
-
+const sizes = {
+  1: 130,
+  2: 95,
+  3: 95,
+  4: 95,
+  5: 95,
+  6: 95,
+  7: 105,
+  8: 95
 };
   const pos = positions[table];
 console.log("桌號=",table);
