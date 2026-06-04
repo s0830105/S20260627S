@@ -32,7 +32,4 @@ async function searchGuest() {
   `;
 }
 
-window.searchGuest =
-  searchGuest;
-    }
-}
+window.searchGuest = searchGuest;
