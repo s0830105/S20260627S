@@ -45,7 +45,8 @@ const checkinSnapshot =
   );
 
 const isCheckedIn =
-  checkinSnapshot.exists();
+  checkinSnapshot.exists() &&
+  checkinSnapshot.val().checkedIn === true;
   
   if (!guest) {
 
