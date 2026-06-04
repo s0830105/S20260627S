@@ -25,11 +25,27 @@ async function searchGuest() {
     return;
   }
 
-  result.innerHTML = `
-    <h3>${guest.name}</h3>
-    <p>桌號：${guest.table}</p>
-    <p>桌名：${guest.tableName}</p>
-  `;
+  const sameTableGuests = guests.filter(
+  g => g.table === guest.table
+);
+
+const guestList = sameTableGuests
+  .map(g => g.name)
+  .join("<br>");
+
+result.innerHTML = `
+  <h3>${guest.name}</h3>
+
+  <p>桌號：${guest.table}</p>
+
+  <p>桌名：${guest.tableName}</p>
+
+  <hr>
+
+  <h4>同桌貴賓</h4>
+
+  ${guestList}
+`;
 }
 
 window.searchGuest = searchGuest;
