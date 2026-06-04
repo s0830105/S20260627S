@@ -40,11 +40,13 @@ result.innerHTML = `
 
   <p>桌名：${guest.tableName}</p>
 
+  <p>
+  ${guest.checkedIn ? "🟢 已簽到" : "🔴 未簽到"}
+  </p>
+
   <hr>
 
- <h1 style="color:red">
-測試成功
-</h1>
+  <h4>同桌貴賓</h4>
 
   ${guestList}
 `;
