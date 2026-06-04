@@ -41,7 +41,7 @@ async function searchGuest() {
     );
 const checkinSnapshot =
   await get(
-    ref(db, name)
+    ref(db, `checkins/${name}`)
   );
 
 const isCheckedIn =
