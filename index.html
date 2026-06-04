@@ -75,8 +75,32 @@ placeholder="請輸入姓名">
 
 <div id="result"></div>
 
-<script>
+<script type="module">
 
+import { initializeApp }
+from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
+
+import {
+  getDatabase,
+  ref,
+  set,
+  remove,
+  get
+}
+from "https://www.gstatic.com/firebasejs/12.0.0/firebase-database.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyBzOpsVAcKlrhjzed79LOCwss4WLcu50n0",
+  authDomain: "s20260627-96401.firebaseapp.com",
+  databaseURL: "https://s20260627-96401-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "s20260627-96401",
+  storageBucket: "s20260627-96401.firebasestorage.app",
+  messagingSenderId: "738740962399",
+  appId: "1:738740962399:web:d7405a154c06e306b47ea"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getDatabase(app);
 let guests=[];
 
 fetch("guests.json")
@@ -133,7 +157,7 @@ guests.filter(g=>
     });
 
 }
-function findGuest(){
+async function findGuest(){
 
     const name=
     document.getElementById("searchName")
@@ -148,14 +172,18 @@ function findGuest(){
         .innerHTML="查無資料";
         return;
     }
+    const snap = await get(
+  ref(db,"checkin/"+guest.id)
+);
+const checked = snap.exists();
 
    const status =
-guest.checkedIn
+checked
 ? "🟢 已到場"
 : "🔴 未到場";
 
 const checkinBtn =
-guest.checkedIn
+checked
 ? `
 <button onclick="cancelCheckin('${guest.name}')">
 取消簽到
@@ -180,32 +208,45 @@ ${guest.tableName}
 ${checkinBtn}
 `;
 }
-function checkIn(name){
+async function checkIn(name){
 
   const guest =
   guests.find(g=>g.name===name);
 
   if(!guest) return;
 
-  guest.checkedIn = true;
+  await set(
+    ref(db,"checkin/"+guest.id),
+    {
+      id: guest.id,
+      name: guest.name,
+      table: guest.table,
+      tableName: guest.tableName,
+      time: Date.now()
+    }
+  );
 
   alert("簽到成功");
 
   findGuest();
+
 }
 
-function cancelCheckin(name){
+async function cancelCheckIn(name){
 
   const guest =
   guests.find(g=>g.name===name);
 
   if(!guest) return;
 
-  guest.checkedIn = false;
+  await remove(
+    ref(db,"checkin/"+guest.id)
+  );
 
   alert("已取消簽到");
 
   findGuest();
+
 }
 </script>
 
