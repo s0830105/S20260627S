@@ -77,12 +77,13 @@ button{
 
 .highlight{
   position:absolute;
-  width:80px;
-  height:80px;
+  width:95px;
+  height:95px;
   border:5px solid #39ff88;
   border-radius:50%;
   transform:translate(-50%,-50%);
   animation:flash 1s infinite;
+  box-sizing:border-box;
 }
   box-shadow:
     0 0 10px #00ff66,
