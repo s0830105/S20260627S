@@ -149,18 +149,64 @@ function findGuest(){
         return;
     }
 
-    document.getElementById("result")
-    .innerHTML=
-    `
-    <h2>${guest.name}</h2>
+   const status =
+guest.checkedIn
+? "🟢 已到場"
+: "🔴 未到場";
 
-    桌位：
-    ${guest.table}號桌
+const checkinBtn =
+guest.checkedIn
+? `
+<button onclick="cancelCheckin('${guest.name}')">
+取消簽到
+</button>
+`
+: `
+<button onclick="checkIn('${guest.name}')">
+我要簽到
+</button>
+`;
 
-    ${guest.tableName}
-    `;
+document.getElementById("result").innerHTML = `
+<h2>${guest.name}</h2>
+
+<p>
+桌位：${guest.table}號桌
+${guest.tableName}
+</p>
+
+<p>${status}</p>
+
+${checkinBtn}
+`;
+}
+function checkIn(name){
+
+  const guest =
+  guests.find(g=>g.name===name);
+
+  if(!guest) return;
+
+  guest.checkedIn = true;
+
+  alert("簽到成功");
+
+  findGuest();
 }
 
+function cancelCheckin(name){
+
+  const guest =
+  guests.find(g=>g.name===name);
+
+  if(!guest) return;
+
+  guest.checkedIn = false;
+
+  alert("已取消簽到");
+
+  findGuest();
+}
 </script>
 
 </body>
