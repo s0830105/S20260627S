@@ -44,6 +44,9 @@ result.innerHTML = `
   ${guest.checkedIn ? "🟢 已簽到" : "🔴 未簽到"}
   </p>
 
+<button onclick="checkIn('${guest.name}')">
+我要簽到
+</button>
   <hr>
 
   <h4>同桌貴賓</h4>
@@ -102,3 +105,11 @@ searchInput.addEventListener(
 
   }
 );
+
+function checkIn(name){
+
+  alert(name + " 簽到成功");
+
+}
+
+window.checkIn = checkIn;
