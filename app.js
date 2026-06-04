@@ -195,9 +195,11 @@ async function checkIn(name){
   );
 
   alert(name + " 簽到成功");
+
+  await searchGuest();
+
   loadStats();
 }
-
 window.checkIn = checkIn;
 loadStats();
 
