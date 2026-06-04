@@ -3,9 +3,10 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/11.10.0/fireba
 import {
   getDatabase,
   ref,
+  get,
   set,
-  get
-} from "https://www.gstatic.com/firebasejs/11.10.0/firebase-database.js";
+  remove
+}from "https://www.gstatic.com/firebasejs/11.10.0/firebase-database.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyCY-ZuOIT0gJsqA5ep1WcMcQpw8Hk_EdpI",
@@ -116,10 +117,28 @@ ${isCheckedIn ? "🟢 已簽到" : "🔴 未簽到"}
 
 ${
   isCheckedIn
-    ? `<p>簽到時間：${checkinSnapshot.val().time}</p>`
-    : `<button onclick="checkIn('${guest.name}')">
-         我要簽到
-       </button>`
+  ? `
+    <p>簽到時間：${checkinSnapshot.val().time}</p>
+
+    <button
+      onclick="cancelCheckIn('${guest.name}')"
+      style="
+        background:#ff4d4f;
+        color:white;
+        border:none;
+        padding:10px 20px;
+        border-radius:8px;
+        cursor:pointer;
+      "
+    >
+      ❌取消簽到
+    </button>
+    `
+  : `
+    <button onclick="checkIn('${guest.name}')">
+      我要簽到
+    </button>
+    `
 }
   <hr>
 
@@ -203,6 +222,26 @@ await searchGuest();
 await loadStats();
 }
 window.checkIn = checkIn;
+async function cancelCheckIn(name){
+
+  const ok = confirm(
+    `確定取消 ${name} 的簽到嗎？`
+  );
+
+  if(!ok) return;
+
+  await remove(
+    ref(db,"checkins/" + name)
+  );
+
+  alert(`${name} 已取消簽到`);
+
+  await searchGuest();
+  await loadStats();
+
+}
+
+window.cancelCheckIn = cancelCheckIn;
 loadStats();
 
 function showMap(table){
