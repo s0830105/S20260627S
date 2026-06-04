@@ -108,7 +108,24 @@ guests.forEach(g=>{
 document.getElementById("tableStats").innerHTML =
 Object.entries(tableMap)
 .map(([table,data])=>`
-${table}：${data.checked}/${data.total} 人<br>
+
+<div style="
+padding:10px;
+margin-bottom:10px;
+border:1px solid #ddd;
+border-radius:8px;
+">
+
+<b>${table}</b><br>
+
+👥 ${data.checked}/${data.total} 人
+
+<br>
+
+📈 ${Math.round(data.checked / data.total * 100)}%
+
+</div>
+
 `)
 .join("");
 
