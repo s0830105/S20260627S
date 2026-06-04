@@ -209,23 +209,23 @@ function showMap(table){
 
   table = Number(table);
 
-  const positions = {
+ const positions = {
 
-  1:{top:'22%',left:'42%'},
+  1:{top:'31%', left:'50%'},
 
-  2:{top:'38%',left:'63%'},
+  2:{top:'44%', left:'79%'},
 
-  3:{top:'38%',left:'13%'},
+  3:{top:'44%', left:'21%'},
 
-  4:{top:'58%',left:'13%'},
+  4:{top:'64%', left:'21%'},
 
-  5:{top:'58%',left:'63%'},
+  5:{top:'64%', left:'79%'},
 
-  6:{top:'81%',left:'13%'},
+  6:{top:'86%', left:'21%'},
 
-  7:{top:'81%',left:'42%'},
+  7:{top:'86%', left:'50%'},
 
-  8:{top:'81%',left:'63%'}
+  8:{top:'86%', left:'79%'}
 
 };
   const pos = positions[table];
