@@ -207,6 +207,8 @@ loadStats();
 
 function showMap(table){
 
+  table = Number(table);
+
   const positions = {
 
     1:{top:'22%',left:'42%'},
@@ -228,7 +230,8 @@ function showMap(table){
   };
 
   const pos = positions[table];
-
+console.log("桌號=",table);
+console.log("位置=",pos);
   document.getElementById("mapContainer").innerHTML=`
     <div class="map-wrapper">
 
