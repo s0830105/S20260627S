@@ -12,7 +12,8 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/11.10.0/fireba
 import {
   getDatabase,
   ref,
-  get
+  get,
+  remove
 } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-database.js";
 
 const firebaseConfig = {
@@ -129,7 +130,7 @@ border-radius:8px;
 `)
 .join("");
 
- document.getElementById("checked").innerHTML =
+document.getElementById("checked").innerHTML =
   checkedGuests
     .map(g=>{
 
@@ -137,11 +138,36 @@ border-radius:8px;
         checkedData[g.name]?.time || "";
 
       return `
-      ${g.name}
+      <div style="
+        margin-bottom:15px;
+      ">
+
+      <b>${g.name}</b>
       （${g.tableName}）
+
       <br>
+
       ⏰ ${time}
+
+      <br><br>
+
+      <button
+        onclick="cancelCheckIn('${g.name}')"
+        style="
+          background:#ff4d4f;
+          color:white;
+          border:none;
+          padding:6px 12px;
+          border-radius:6px;
+          cursor:pointer;
+        "
+      >
+      ❌ 取消簽到
+      </button>
+
       <hr>
+
+      </div>
       `;
 
     })
@@ -152,6 +178,28 @@ border-radius:8px;
       .map(g=>`${g.name}（${g.tableName}）`)
       .join("<br>");
 }
+async function cancelCheckIn(name){
+
+  const ok = confirm(
+    `確定取消 ${name} 的簽到嗎？`
+  );
+
+  if(!ok) return;
+
+  await remove(
+    ref(db, "checkins/" + name)
+  );
+
+  alert(
+    `${name} 已取消簽到`
+  );
+
+  loadAdmin();
+
+}
+
+window.cancelCheckIn =
+  cancelCheckIn;
 
 loadAdmin();
 
