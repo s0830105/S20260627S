@@ -33,7 +33,8 @@ async function loadStats(){
     await get(
       ref(db, "checkins")
     );
-
+console.log(snapshot.val());
+console.log(snapshot.exists());
   const checkedCount =
     snapshot.exists()
       ? Object.keys(snapshot.val()).length
