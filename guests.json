@@ -309,7 +309,7 @@
   },
   {
     "id": 45,
-    "name": "大姨",
+    "name": "王春燕",
     "table": 5,
     "tableName": "眷愛桌",
     "checkedIn": false
@@ -381,47 +381,47 @@
     "id": 55,
     "name": "張子瑄+1",
     "table": 6,
-    "tableName": "時光桌",
+    "tableName": "旅程桌",
     "checkedIn": false
   },
   {
     "id": 56,
     "name": "張歆右",
     "table": 6,
-    "tableName": "時光桌",
+    "tableName": "旅程桌",
     "checkedIn": false
   },
   {
     "id": 57,
     "name": "郭泓佑",
     "table": 6,
-    "tableName": "時光桌",
+    "tableName": "旅程桌",
     "checkedIn": false
   },
   {
     "id": 58,
     "name": "郭泓佑+1",
     "table": 6,
-    "tableName": "時光桌",
+    "tableName": "旅程桌",
     "checkedIn": false
   },
   {
     "id": 59,
-    "name": "郭泓佑+2",
+    "name": "旅程桌",
     "table": 6,
     "tableName": "時光桌",
     "checkedIn": false
   },
   {
     "id": 60,
-    "name": "郭泓佑+3",
+    "name": "旅程桌",
     "table": 6,
     "tableName": "時光桌",
     "checkedIn": false
   },
   {
     "id": 61,
-    "name": "林勝瑋",
+    "name": "旅程桌",
     "table": 6,
     "tableName": "時光桌",
     "checkedIn": false
@@ -430,70 +430,70 @@
     "id": 62,
     "name": "葛明轅",
     "table": 7,
-    "tableName": "旅程桌",
+    "tableName": "時光桌",
     "checkedIn": false
   },
   {
     "id": 63,
     "name": "胡文瀗",
     "table": 7,
-    "tableName": "旅程桌",
+    "tableName": "時光桌",
     "checkedIn": false
   },
   {
     "id": 64,
     "name": "胡文瀗+1",
     "table": 7,
-    "tableName": "旅程桌",
+    "tableName": "時光桌",
     "checkedIn": false
   },
   {
     "id": 65,
     "name": "胡文瀗+2",
     "table": 7,
-    "tableName": "旅程桌",
+    "tableName": "時光桌",
     "checkedIn": false
   },
   {
     "id": 66,
     "name": "林耕儀",
     "table": 7,
-    "tableName": "旅程桌",
+    "tableName": "時光桌",
     "checkedIn": false
   },
   {
     "id": 67,
     "name": "洪楙淳",
     "table": 7,
-    "tableName": "旅程桌",
+    "tableName": "時光桌",
     "checkedIn": false
   },
   {
     "id": 68,
     "name": "洪楙淳+1",
     "table": 7,
-    "tableName": "旅程桌",
+    "tableName": "時光桌",
     "checkedIn": false
   },
   {
     "id": 69,
     "name": "陳暉璋",
     "table": 7,
-    "tableName": "旅程桌",
+    "tableName": "時光桌",
     "checkedIn": false
   },
   {
     "id": 70,
     "name": "游詠淳",
     "table": 7,
-    "tableName": "旅程桌",
+    "tableName": "時光桌",
     "checkedIn": false
   },
   {
     "id": 71,
     "name": "游詠淳+1",
     "table": 7,
-    "tableName": "旅程桌",
+    "tableName": "時光桌",
     "checkedIn": false
   },
   {
@@ -519,7 +519,7 @@
   },
   {
     "id": 75,
-    "name": "王俊甫",
+    "name": "劉俊甫",
     "table": 8,
     "tableName": "同心桌",
     "checkedIn": false
