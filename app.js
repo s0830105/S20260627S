@@ -1,77 +1,38 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-app.js";
-import {
-  getDatabase,
-  ref,
-  get
-} from "https://www.gstatic.com/firebasejs/11.10.0/firebase-database.js";
+async function searchGuest() {
 
-const firebaseConfig = {
-  apiKey: "AIzaSyCY-ZuOIT0gJsqA5ep1WcMcQpw8Hk_EdpI",
-  authDomain: "s20260627-ea381.firebaseapp.com",
-  databaseURL: "https://s20260627-ea381-default-rtdb.asia-southeast1.firebasedatabase.app",
-  projectId: "s20260627-ea381",
-  storageBucket: "s20260627-ea381.firebasestorage.app",
-  messagingSenderId: "282846563979",
-  appId: "1:282846563979:web:6e461c51d133600bbd8e8e"
-};
+  const name =
+    document.getElementById("searchInput").value.trim();
 
-const app = initializeApp(firebaseConfig);
-const db = getDatabase(app);
+  const result =
+    document.getElementById("result");
 
-window.searchGuest = async function () {
+  const response =
+    await fetch("./guests.json");
 
-    const keyword =
-        document.getElementById("searchInput").value.trim();
+  const guests =
+    await response.json();
 
-    const result =
-        document.getElementById("result");
+  const guest =
+    guests.find(
+      g => g.name === name
+    );
 
-    if (!keyword) {
+  if (!guest) {
 
-        result.innerHTML = "請輸入姓名";
+    result.innerHTML =
+      "查無資料";
 
-        return;
-    }
+    return;
+  }
 
-    try {
+  result.innerHTML = `
+    <h3>${guest.name}</h3>
+    <p>桌號：${guest.table}</p>
+    <p>桌名：${guest.tableName}</p>
+  `;
+}
 
-        const snapshot =
-            await get(ref(db, "guests"));
-
-        const guests =
-            snapshot.val();
-
-        const guest =
-            guests.find(g => g.name === keyword);
-
-        if (!guest) {
-
-            result.innerHTML = "查無資料";
-
-            return;
-        }
-
-        result.innerHTML = `
-            <h3>${guest.name}</h3>
-
-            <p>桌號：${guest.table}</p>
-
-            <p>桌名：${guest.tableName}</p>
-
-            <p>
-            ${
-                guest.checkedIn
-                ? "🟢 已簽到"
-                : "🔴 未簽到"
-            }
-            </p>
-        `;
-
-    } catch(error){
-
-        console.error(error);
-
-        result.innerHTML =
-        "讀取資料失敗";
+window.searchGuest =
+  searchGuest;
     }
 }
