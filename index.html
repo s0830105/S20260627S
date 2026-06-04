@@ -102,10 +102,11 @@ function showSuggestions(){
 
     if(keyword.length===0)return;
 
-    const matches=
-    guests.filter(g=>
-        g.name.includes(keyword)
-    );
+   const matches=
+guests.filter(g=>
+    g.name.includes(keyword)
+)
+.sort((a,b)=>a.name.localeCompare(b.name));
 
     matches.slice(0,10).forEach(g=>{
 
@@ -114,7 +115,8 @@ function showSuggestions(){
 
         div.className="suggestion";
 
-        div.innerText=g.name;
+       div.innerText=
+`${g.name}（${g.tableName}）`;
 
         div.onclick=()=>{
 
