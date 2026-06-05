@@ -241,6 +241,7 @@ setTimeout(() => {
       block: "center"
     });
 }, 300);
+  document.getElementById("searchInput").focus();
 }
 
 window.searchGuest = searchGuest;
