@@ -242,6 +242,7 @@ setTimeout(() => {
     });
 }, 300);
   document.getElementById("searchInput").focus();
+  document.getElementById("searchInput").select();
 }
 
 window.searchGuest = searchGuest;
