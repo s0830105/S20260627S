@@ -234,8 +234,10 @@ ${
 }
   <hr>
 
- <h4>同桌貴賓（共 ${sameTableGuests.length} 位）</h4>
-  `;
+<h4>同桌貴賓（共 ${sameTableGuests.length} 位）</h4>
+
+${guestList}
+`;
 
 document.getElementById("mapContainer").innerHTML += `
 <div style="
