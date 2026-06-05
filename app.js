@@ -399,6 +399,44 @@ async function cancelCheckIn(name){
 }
 
 window.cancelCheckIn = cancelCheckIn;
+async function checkSelectedGuests(){
+
+  const checkedGuests =
+    document.querySelectorAll(
+      ".guest-check:checked"
+    );
+
+  if(checkedGuests.length === 0){
+    alert("請先勾選賓客");
+    return;
+  }
+
+  for(const guest of checkedGuests){
+
+    const name = guest.value;
+
+    await set(
+      ref(db, "checkins/" + name),
+      {
+        name: name,
+        checkedIn: true,
+        time: new Date().toLocaleString()
+      }
+    );
+  }
+
+  alert(
+    `已簽到 ${checkedGuests.length} 位賓客`
+  );
+
+  await loadStats();
+
+  await searchGuest();
+}
+
+window.checkSelectedGuests =
+  checkSelectedGuests;
+
 loadStats();
 
 function showMap(table){
