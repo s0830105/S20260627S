@@ -152,9 +152,30 @@ result.innerHTML = `
 
   <h3>${guest.name}</h3>
 
-  <p>桌號：${guest.table}</p>
+<div style="
+  background:#FFF8F0;
+  border-radius:18px;
+  padding:15px;
+  margin:15px 0;
+">
 
-  <p>桌名：${guest.tableName}</p>
+  <div style="
+    font-size:32px;
+    font-weight:bold;
+    color:#8B6B4A;
+  ">
+    📍 第${guest.table}桌
+  </div>
+
+  <div style="
+    font-size:20px;
+    color:#5A4632;
+    margin-top:5px;
+  ">
+    ${guest.tableName}
+  </div>
+
+</div>
 
   <p>
 ${isCheckedIn ? "🟢 已簽到" : "🔴 未簽到"}
