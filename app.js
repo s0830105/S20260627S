@@ -99,7 +99,19 @@ console.log(isCheckedIn);
   const sameTableGuests = guests.filter(
   g => g.table === guest.table
 );
+const checkinsSnapshot =
+  await get(ref(db, "checkins"));
 
+const allCheckins =
+  checkinsSnapshot.exists()
+    ? checkinsSnapshot.val()
+    : {};
+
+const arrivedCount =
+  sameTableGuests.filter(
+    g => allCheckins[g.name]
+  ).length;
+  
 const guestList = sameTableGuests
   .map(g => `
     <label style="
@@ -234,7 +246,9 @@ ${
 }
   <hr>
 
-<h4>同桌貴賓（共 ${sameTableGuests.length} 位）</h4>
+<h4>
+同桌貴賓（共 ${sameTableGuests.length} 位，已到 ${arrivedCount} 位）
+</h4>
 
 <label style="
   display:block;
