@@ -119,9 +119,12 @@ const guestList = sameTableGuests
       !!allCheckins[g.name];
 
     return `
-     <label style="
-  display:grid;
-  grid-template-columns:40px 1fr 80px;
+   <label
+  class="guest-check-card"
+  style="
+    display:grid;
+    grid-template-columns:40px 1fr 80px;
+    
   align-items:center;
   padding:10px 14px;
   margin:6px 0;
@@ -145,10 +148,13 @@ const guestList = sameTableGuests
             ${isArrived ? "checked disabled" : ""}
           >
 
-        <span style="
-  white-space:nowrap;
-  font-size:18px;
-">
+      <span
+  class="guest-name"
+  style="
+    white-space:nowrap;
+    font-size:18px;
+  "
+>
   ${g.name}
 </span>
 
@@ -157,8 +163,10 @@ const guestList = sameTableGuests
         ${
           isArrived
           ? `
-            <span style="
-              color:#22C55E;
+           <span
+  class="guest-status"
+  style="
+    color:#22C55E;
               font-weight:bold;
             ">
               已簽到
