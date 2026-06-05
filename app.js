@@ -105,30 +105,49 @@ const guestList = sameTableGuests
   .join("<br>");
 
 result.innerHTML = `
+ <div style="
+  background:#FFFDF9;
+  border-radius:24px;
+  padding:25px;
+  margin-bottom:20px;
+  box-shadow:0 4px 12px rgba(90,70,50,0.08);
+">
+
   <div style="
-    color:#8B6B4A;
-    margin-bottom:20px;
+    font-size:18px;
+    color:#A68A6A;
+    letter-spacing:3px;
+    margin-bottom:10px;
   ">
-    <h2 style="
-      margin-bottom:10px;
-      font-weight:400;
-    ">
-      歡迎蒞臨
-    </h2>
+    WELCOME
+  </div>
 
-    <div style="
-      font-size:28px;
-      margin-bottom:10px;
-    ">
-      培榮 ❤️ 紫菻
-    </div>
+  <div style="
+    font-size:30px;
+    color:#8B6B4A;
+    margin-bottom:8px;
+  ">
+    培榮 ❤️ 紫菻
+  </div>
 
-    <div style="
-      color:#A68A6A;
-      font-size:14px;
-    ">
-      願您今天有個美好的午宴時光
-    </div>
+  <div style="
+    font-size:18px;
+    color:#5A4632;
+    margin-bottom:10px;
+  ">
+    婚宴座位查詢
+  </div>
+
+  <div style="
+    color:#A68A6A;
+    font-size:14px;
+    line-height:1.8;
+  ">
+    感謝您的蒞臨與祝福<br>
+    願您今天有個美好的午宴時光
+  </div>
+
+</div>
   </div>
 
   <h3>${guest.name}</h3>
