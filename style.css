@@ -9,8 +9,9 @@ body{
 .container{
     width:100%;
     max-width:500px;
-    margin:auto;
+    margin:0 auto;
     padding:30px;
+    text-align:center;
 }
 
 h1{
@@ -18,19 +19,16 @@ h1{
 }
 
 input{
-    background:#FFFDF9;
-    border:2px solid #D6C2A8;
-    border-radius:12px;
-    color:#4A4036;
+    width:100%;
+    padding:12px;
+    box-sizing:border-box;
+    margin-bottom:10px;
 }
 
 button{
-    background:#8B7355;
-    color:white;
-    border:none;
-    border-radius:12px;
-    font-weight:bold;
-    transition:.3s;
+    width:100%;
+    padding:12px;
+    cursor:pointer;
 }
 
 button:hover{
