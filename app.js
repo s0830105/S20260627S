@@ -352,7 +352,7 @@ const sizes = {
   const pos = positions[table];
 console.log("桌號=",table);
 console.log("位置=",pos);
-  document.getElementById("mapContainer").innerHTML=`
+  document.getElementById("mapContainer").innerHTML= `
     <div class="map-wrapper">
 
       <img
