@@ -8,9 +8,9 @@ body{
 
 .container{
     width:100%;
-    max-width:500px;
+    max-width:900px;
     margin:0 auto;
-    padding:30px;
+    padding:20px;
     text-align:center;
 }
 
@@ -112,7 +112,7 @@ button:hover{
     position:relative;
     display:inline-block;
     width:100%;
-    max-width:500px;
+    max-width:650px;
 }
 
 .floor-map{
