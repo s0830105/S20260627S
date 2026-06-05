@@ -225,3 +225,51 @@ button:hover{
   }
 
 }
+.guest-row{
+  display:grid;
+  grid-template-columns:40px 1fr 70px;
+  align-items:center;
+
+  padding:10px 12px;
+  margin:6px 0;
+
+  background:#FFFDF9;
+
+  border:1px solid #E8DCCB;
+  border-radius:10px;
+}
+
+.guest-name{
+  font-size:18px;
+  color:#5A4632;
+}
+
+.guest-arrived{
+  color:#22C55E;
+  font-size:14px;
+  font-weight:bold;
+  text-align:right;
+}
+
+.guest-not-arrived{
+  color:#999;
+  font-size:14px;
+  text-align:right;
+}
+@media (max-width:768px){
+
+  .guest-row{
+    grid-template-columns:40px 1fr 55px;
+    padding:8px 10px;
+  }
+
+  .guest-name{
+    font-size:16px;
+  }
+
+  .guest-arrived,
+  .guest-not-arrived{
+    font-size:12px;
+  }
+
+}
