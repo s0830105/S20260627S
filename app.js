@@ -101,8 +101,21 @@ console.log(isCheckedIn);
 );
 
 const guestList = sameTableGuests
-  .map(g => g.name)
-  .join("<br>");
+  .map(g => `
+    <label style="
+      display:block;
+      margin:8px 0;
+      text-align:left;
+    ">
+      <input
+        type="checkbox"
+        class="guest-check"
+        value="${g.name}"
+      >
+      ${g.name}
+    </label>
+  `)
+  .join("");
 
 result.innerHTML = `
  <div style="
