@@ -3,13 +3,15 @@ body{
     padding:0;
     font-family:"Microsoft JhengHei";
     background:#E8DCCB;
-    color:#4A4036;
+
+    display:flex;
+    justify-content:center;
 }
 
 
 .container{
+    width:100%;
     max-width:500px;
-    margin:0 auto;
     padding:30px;
 }
 
