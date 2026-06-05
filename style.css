@@ -112,7 +112,7 @@ button:hover{
     position:relative;
     display:inline-block;
     width:100%;
-    max-width:250px;
+    max-width:100px;
 }
 
 .floor-map{
