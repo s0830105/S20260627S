@@ -173,6 +173,18 @@ ${
   ${guestList}
   `;
 
+document.getElementById("mapContainer").innerHTML +=
+  <div style="
+    font-size:28px;
+    font-weight:bold;
+    color:#8B6B4A;
+    margin:20px 0;
+    text-align:center;
+  ">
+    📍 第${guest.table}桌｜${guest.tableName}
+  </div>
+`;
+
 showMap(guest.table);
 setTimeout(() => {
   document.getElementById("mapContainer")
