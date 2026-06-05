@@ -5,7 +5,6 @@ body{
     background:#E8DCCB;
 }
 
-
 .container{
     width:100%;
     max-width:900px;
@@ -22,21 +21,23 @@ h1{
     font-weight:400;
     margin-bottom:35px;
 }
+
 input{
     width:100%;
     padding:12px;
     box-sizing:border-box;
     margin-bottom:10px;
 
-    background:#FFF8F0;      
+    background:#FFF8F0;
     border:2px solid #D6C2A8;
     border-radius:12px;
 
-    color:#8B6B4A;          
+    color:#8B6B4A;
     font-size:16px;
 }
+
 input::placeholder{
-    color:#B89A7A;          
+    color:#B89A7A;
 }
 
 button{
@@ -44,9 +45,10 @@ button{
     padding:14px;
     cursor:pointer;
 
-   background:#C7A17A;
+    background:#C7A17A;
     color:#FFFFFF;
-    border:none;    
+
+    border:none;
     border-radius:12px;
 
     font-size:18px;
@@ -56,25 +58,31 @@ button{
 }
 
 button:hover{
-   button:hover{
     opacity:0.9;
     transform:translateY(-2px);
 }
 
 #result{
-    #result{
     background:#FFFDF9;
+    border:1px solid #D6C2A8;
     border-radius:24px;
     padding:25px;
     margin-top:25px;
-    box-shadow:0 4px 12px rgba(90,70,50,0.08);
+    color:#5A4632;
+
+    box-shadow:
+    0 4px 12px rgba(90,70,50,0.08);
 }
 
 #suggestions{
     background:#FFFFFF;
     border:2px solid #D6C2A8;
     border-radius:12px;
-    box-shadow:0 6px 18px rgba(0,0,0,0.12);
+
+    box-shadow:
+    0 6px 18px rgba(0,0,0,0.12);
+
+    overflow:hidden;
 }
 
 .suggestion-item{
@@ -83,6 +91,7 @@ button:hover{
     color:#5A4632;
     background:#FFFDF9;
 }
+
 .suggestion-item:hover{
     background:#F3E6D8;
 }
@@ -91,20 +100,19 @@ button:hover{
     background:#FFFDF9;
     border:1px solid #D6C2A8;
     border-radius:20px;
+
     padding:15px;
     margin-bottom:20px;
+
     text-align:center;
     line-height:1.8;
+
     font-weight:bold;
-    color:#5A4632;
-}
-    
-    border:1px solid #D6C2A8;
     color:#5A4632;
 }
 
 #mapContainer{
-    margin-top:10px;
+    margin-top:15px;
     text-align:center;
 }
 
@@ -118,15 +126,21 @@ button:hover{
 .floor-map{
     width:100%;
     height:auto;
+    display:block;
     border-radius:12px;
 }
+
 .highlight{
     position:absolute;
+
     width:95px;
     height:95px;
+
     border:5px solid #39ff88;
     border-radius:50%;
+
     transform:translate(-50%,-50%);
+
     box-sizing:border-box;
 
     box-shadow:
@@ -134,22 +148,25 @@ button:hover{
         0 0 20px #00ff66;
 
     animation:flash 1s infinite;
+
     pointer-events:none;
 
-    z-index:999; 
+    z-index:999;
 }
 
 @keyframes flash{
-  0%{
-    opacity:1;
-    box-shadow:0 0 10px #00ff66;
-  }
-  50%{
-    opacity:.3;
-    box-shadow:0 0 30px #00ff66;
-  }
-  100%{
-    opacity:1;
-    box-shadow:0 0 10px #00ff66;
-  }
+    0%{
+        opacity:1;
+        box-shadow:0 0 10px #00ff66;
+    }
+
+    50%{
+        opacity:.3;
+        box-shadow:0 0 30px #00ff66;
+    }
+
+    100%{
+        opacity:1;
+        box-shadow:0 0 10px #00ff66;
+    }
 }
