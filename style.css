@@ -192,3 +192,28 @@ button:hover{
     }
 
 }
+@media (max-width:768px){
+
+  .guest-check-card{
+    display:block !important;
+  }
+
+  .guest-name{
+    display:block;
+    font-size:18px;
+    line-height:1.5;
+    margin-top:5px;
+  }
+
+  .guest-status{
+    display:block;
+    margin-left:40px;
+    margin-top:3px;
+    font-size:14px;
+  }
+
+  #selectAllGuests{
+    transform:scale(1.2);
+  }
+
+}
