@@ -428,10 +428,11 @@ async function checkSelectedGuests(){
   alert(
     `已簽到 ${checkedGuests.length} 位賓客`
   );
-
-  await loadStats();
-
-  await searchGuest();
+for(const guest of checkedGuests){
+  guest.disabled = true;
+}
+  
+await loadStats();
 }
 
 window.checkSelectedGuests =
