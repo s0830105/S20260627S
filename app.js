@@ -119,23 +119,24 @@ const guestList = sameTableGuests
       !!allCheckins[g.name];
 
     return `
-      <label style="
-        display:flex;
-        align-items:center;
-        justify-content:space-between;
-        padding:10px 14px;
-        margin:6px 0;
-        background:#FFFDF9;
-        border:1px solid #E8DCCB;
-        border-radius:10px;
-        cursor:pointer;
-      ">
+     <label style="
+  display:grid;
+  grid-template-columns:40px 1fr 80px;
+  align-items:center;
+  padding:10px 14px;
+  margin:6px 0;
+  background:#FFFDF9;
+  border:1px solid #E8DCCB;
+  border-radius:10px;
+  cursor:pointer;
+">
 
-        <div style="
-          display:flex;
-          align-items:center;
-          gap:10px;
-        ">
+      <div style="
+  display:flex;
+  align-items:center;
+  gap:10px;
+  flex:1;
+">
 
           <input
             type="checkbox"
@@ -144,9 +145,12 @@ const guestList = sameTableGuests
             ${isArrived ? "checked disabled" : ""}
           >
 
-          <span>
-            ${g.name}
-          </span>
+        <span style="
+  white-space:nowrap;
+  font-size:18px;
+">
+  ${g.name}
+</span>
 
         </div>
 
