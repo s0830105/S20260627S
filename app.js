@@ -173,7 +173,7 @@ ${
   ${guestList}
   `;
 
-document.getElementById("mapContainer").innerHTML +=
+document.getElementById("mapContainer").innerHTML +=`
   <div style="
     font-size:28px;
     font-weight:bold;
