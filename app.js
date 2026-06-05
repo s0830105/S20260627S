@@ -399,10 +399,11 @@ const sizes = {
   4: 95,
   5: 95,
   6: 95,
-  7: 105,
+  7: 95,
   8: 95
 };
   const pos = positions[table];
+const size = sizes[table];
 console.log("桌號=",table);
 console.log("位置=",pos);
   document.getElementById("mapContainer").innerHTML= `
@@ -416,6 +417,8 @@ console.log("位置=",pos);
     <div
   class="highlight"
   style="
+    width:${size}px;
+    height:${size}px;
     top:calc(${pos.top} - 8px);
     left:calc(${pos.left} - 8px);
   ">
