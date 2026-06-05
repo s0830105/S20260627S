@@ -104,14 +104,15 @@ button:hover{
 }
 
 #mapContainer{
-  margin-top:20px;
-  text-align:center;
+    margin-top:10px;
+    text-align:center;
 }
 
 .map-wrapper{
     position:relative;
     display:inline-block;
-    width:auto;
+    width:100%;
+    max-width:250px;
 }
 
 .floor-map{
