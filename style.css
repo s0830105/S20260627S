@@ -174,3 +174,25 @@ button:hover{
         box-shadow:0 0 10px #00ff66;
     }
 }
+.content-layout{
+    display:flex;
+    gap:30px;
+    align-items:flex-start;
+    margin-top:20px;
+}
+
+.left-panel{
+    flex:1;
+}
+
+.right-panel{
+    flex:1;
+}
+
+@media (max-width:768px){
+
+    .content-layout{
+        flex-direction:column;
+    }
+
+}
