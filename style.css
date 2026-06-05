@@ -70,10 +70,15 @@ button:hover{
 }
 
 #stats{
-  background:#FFF9F2;
+  background:#FFF8F0;
   border:1px solid #D6C2A8;
+  color:#5A4632;
   border-radius:20px;
   box-shadow:0 4px 12px rgba(0,0,0,.08);
+}
+    
+    border:1px solid #D6C2A8;
+    color:#5A4632;
 }
 
 #mapContainer{
