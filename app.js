@@ -236,6 +236,20 @@ ${
 
 <h4>同桌貴賓（共 ${sameTableGuests.length} 位）</h4>
 
+<label style="
+  display:block;
+  text-align:left;
+  margin-bottom:10px;
+  font-weight:bold;
+">
+  <input
+    type="checkbox"
+    id="selectAllGuests"
+    onclick="toggleAllGuests(this)"
+  >
+  全選同桌貴賓
+</label>
+
 ${guestList}
 
 <button
@@ -437,7 +451,21 @@ await loadStats();
 
 window.checkSelectedGuests =
   checkSelectedGuests;
+function toggleAllGuests(source){
 
+  const checkboxes =
+    document.querySelectorAll(
+      ".guest-check"
+    );
+
+  checkboxes.forEach(cb => {
+    cb.checked = source.checked;
+  });
+
+}
+
+window.toggleAllGuests =
+  toggleAllGuests;
 loadStats();
 
 function showMap(table){
