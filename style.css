@@ -195,25 +195,33 @@ button:hover{
 @media (max-width:768px){
 
   .guest-check-card{
-    display:block !important;
+    display:grid !important;
+    grid-template-columns:40px 1fr 60px !important;
+    align-items:center !important;
+
+    padding:10px 12px !important;
+    margin:4px 0 !important;
   }
 
   .guest-name{
-    display:block;
-    font-size:18px;
-    line-height:1.5;
-    margin-top:5px;
+    display:block !important;
+
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+
+    font-size:16px !important;
+    margin:0 !important;
   }
 
   .guest-status{
-    display:block;
-    margin-left:40px;
-    margin-top:3px;
-    font-size:14px;
-  }
+    display:block !important;
 
-  #selectAllGuests{
-    transform:scale(1.2);
+    margin:0 !important;
+
+    text-align:right;
+    font-size:13px !important;
+    font-weight:bold;
   }
 
 }
