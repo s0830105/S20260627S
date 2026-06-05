@@ -27,8 +27,23 @@ input{
 
 button{
     width:100%;
-    padding:12px;
+    padding:14px;
     cursor:pointer;
+
+    background:#B89A7A;  
+    color:#FFFFFF;      
+
+    border:none;        
+    border-radius:12px;
+
+    font-size:18px;
+    font-weight:600;
+
+    transition:0.3s;
+}
+
+button:hover{
+    background:#A88969;
 }
 
 button:hover{
