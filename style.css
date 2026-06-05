@@ -71,16 +71,17 @@ button:hover{
 }
 
 #suggestions{
-    background:#FFFDF9;
-    border:1px solid #D6C2A8;
+    background:#FFFFFF;
+    border:2px solid #D6C2A8;
     border-radius:12px;
-    box-shadow:0 4px 12px rgba(0,0,0,0.08);
+    box-shadow:0 6px 18px rgba(0,0,0,0.12);
 }
 
 .suggestion-item{
     padding:10px;
     cursor:pointer;
-    color:#6F5A43;
+    color:#5A4632;
+    background:#FFFDF9;
 }
 .suggestion-item:hover{
     background:#F3E6D8;
