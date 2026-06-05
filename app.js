@@ -164,7 +164,7 @@ result.innerHTML = `
     font-weight:bold;
     color:#8B6B4A;
   ">
-    📍 第${guest.table}桌
+    第${guest.table}桌
   </div>
 
   <div style="
