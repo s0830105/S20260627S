@@ -78,7 +78,7 @@
   },
   {
     "id": 12,
-    "name": "謝慈恩+1",
+    "name": "謝慈恩(姊夫)",
     "table": 1,
     "tableName": "蒙福桌",
     "checkedIn": false
@@ -113,7 +113,7 @@
   },
   {
     "id": 17,
-    "name": "洪俊瑛+1",
+    "name": "洪俊瑛(先生)",
     "table": 2,
     "tableName": "永恆桌",
     "checkedIn": false
@@ -204,28 +204,28 @@
   },
   {
     "id": 30,
-    "name": "林欣儀+1",
+    "name": "林欣儀(姑丈)",
     "table": 3,
     "tableName": "家宴桌",
     "checkedIn": false
   },
   {
     "id": 31,
-    "name": "林欣儀+2",
+    "name": "林欣儀(芷嫣)",
     "table": 3,
     "tableName": "家宴桌",
     "checkedIn": false
   },
   {
     "id": 32,
-    "name": "林欣儀+3",
+    "name": "林欣儀(攜伴)",
     "table": 3,
     "tableName": "家宴桌",
     "checkedIn": false
   },
   {
     "id": 33,
-    "name": "陳美月",
+    "name": "陳美月(姨婆)",
     "table": 3,
     "tableName": "家宴桌",
     "checkedIn": false
@@ -253,14 +253,14 @@
   },
   {
     "id": 37,
-    "name": "陳沛禔+1",
+    "name": "陳沛禔(孩子1)",
     "table": 4,
     "tableName": "眷愛桌",
     "checkedIn": false
   },
   {
     "id": 38,
-    "name": "陳沛禔+2",
+    "name": "陳沛禔(孩子2)",
     "table": 4,
     "tableName": "眷愛桌",
     "checkedIn": false
@@ -274,21 +274,21 @@
   },
   {
     "id": 40,
-    "name": "陳湘晴+1",
+    "name": "陳湘晴(先生)",
     "table": 4,
     "tableName": "眷愛桌",
     "checkedIn": false
   },
   {
     "id": 41,
-    "name": "陳湘晴+2",
+    "name": "陳湘晴(孩子1)",
     "table": 4,
     "tableName": "眷愛桌",
     "checkedIn": false
   },
   {
     "id": 42,
-    "name": "陳湘晴+3",
+    "name": "陳湘晴(孩子2)",
     "table": 4,
     "tableName": "眷愛桌",
     "checkedIn": false
@@ -351,7 +351,7 @@
   },
   {
     "id": 51,
-    "name": "張哲宇+1",
+    "name": "張哲宇(太太)",
     "table": 5,
     "tableName": "勇士桌",
     "checkedIn": false
@@ -379,7 +379,7 @@
   },
   {
     "id": 55,
-    "name": "張子瑄+1",
+    "name": "張子瑄(先生)",
     "table": 6,
     "tableName": "時光桌",
     "checkedIn": false
@@ -400,28 +400,28 @@
   },
   {
     "id": 58,
-    "name": "郭泓佑+1",
+    "name": "郭泓佑(太太)",
     "table": 6,
     "tableName": "時光桌",
     "checkedIn": false
   },
   {
     "id": 59,
-    "name": "旅程桌",
+    "name": "郭泓佑(孩子1)",
     "table": 6,
     "tableName": "時光桌",
     "checkedIn": false
   },
   {
     "id": 60,
-    "name": "旅程桌",
+    "name": "郭泓佑(孩子2)",
     "table": 6,
     "tableName": "時光桌",
     "checkedIn": false
   },
   {
     "id": 61,
-    "name": "旅程桌",
+    "name": "林勝瑋",
     "table": 6,
     "tableName": "時光桌",
     "checkedIn": false
@@ -442,14 +442,14 @@
   },
   {
     "id": 64,
-    "name": "胡文瀗+1",
+    "name": "胡文瀗(太太)",
     "table": 7,
     "tableName": "同心桌",
     "checkedIn": false
   },
   {
     "id": 65,
-    "name": "胡文瀗+2",
+    "name": "胡文瀗(孩子1)",
     "table": 7,
     "tableName": "同心桌",
     "checkedIn": false
@@ -470,7 +470,7 @@
   },
   {
     "id": 68,
-    "name": "洪楙淳+1",
+    "name": "洪楙淳(太太)",
     "table": 7,
     "tableName": "同心桌",
     "checkedIn": false
@@ -491,7 +491,7 @@
   },
   {
     "id": 71,
-    "name": "游詠淳+1",
+    "name": "游詠淳(太太)",
     "table": 7,
     "tableName": "同心桌",
     "checkedIn": false
@@ -505,7 +505,7 @@
   },
   {
     "id": 73,
-    "name": "凌瑋璘+1",
+    "name": "凌瑋璘(周大哥)",
     "table": 8,
     "tableName": "旅程桌",
     "checkedIn": false
@@ -533,7 +533,7 @@
   },
   {
     "id": 77,
-    "name": "潘怡璇+1",
+    "name": "潘怡璇(男友)",
     "table": 8,
     "tableName": "旅程桌",
     "checkedIn": false
@@ -547,7 +547,7 @@
   },
   {
     "id": 79,
-    "name": "胡于婷+1",
+    "name": "胡于婷(男友)",
     "table": 8,
     "tableName": "旅程桌",
     "checkedIn": false
