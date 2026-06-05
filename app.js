@@ -183,8 +183,16 @@ result.innerHTML = `
 </div>
 
   <p>
-${isCheckedIn ? "🟢 已簽到" : "🔴 未簽到"}
-</p>
+<div style="
+  font-size:24px;
+  font-weight:bold;
+  margin:15px 0;
+">
+${isCheckedIn
+  ? '<span style="color:#22c55e;">🟢 已簽到</span>'
+  : '<span style="color:#ef4444;">🔴 未簽到</span>'
+}
+</div>
 
 ${
   isCheckedIn
