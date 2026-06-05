@@ -181,6 +181,13 @@ setTimeout(() => {
       block: "center"
     });
 }, 300);
+setTimeout(() => {
+  document.getElementById("mapContainer")
+    .scrollIntoView({
+      behavior: "smooth",
+      block: "center"
+    });
+}, 300);
 }
 
 window.searchGuest = searchGuest;
