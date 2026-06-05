@@ -16,13 +16,23 @@ body{
 
 h1{
     text-align:center;
+    color:#5A4632;
 }
-
 input{
     width:100%;
     padding:12px;
     box-sizing:border-box;
     margin-bottom:10px;
+
+    background:#FFF8F0;      
+    border:2px solid #D6C2A8;
+    border-radius:12px;
+
+    color:#8B6B4A;          
+    font-size:16px;
+}
+input::placeholder{
+    color:#B89A7A;          
 }
 
 button{
