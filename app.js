@@ -150,8 +150,13 @@ result.innerHTML = `
 </div>
   </div>
 
-  <h3>${guest.name}</h3>
-
+ <h3 style="
+  font-size:36px;
+  color:#5A4632;
+  margin-bottom:15px;
+">
+  ${guest.name}
+</h3>
 <div style="
   background:#FFF8F0;
   border-radius:18px;
