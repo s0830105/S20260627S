@@ -119,67 +119,26 @@ const guestList = sameTableGuests
       !!allCheckins[g.name];
 
     return `
-   <label
-  class="guest-check-card"
-  style="
-    display:grid;
-    grid-template-columns:40px 1fr 80px;
-    
-  align-items:center;
-  padding:10px 14px;
-  margin:6px 0;
-  background:#FFFDF9;
-  border:1px solid #E8DCCB;
-  border-radius:10px;
-  cursor:pointer;
-">
+      <label class="guest-row">
 
-      <div style="
-  display:flex;
-  align-items:center;
-  gap:10px;
-  flex:1;
-">
+        <input
+          type="checkbox"
+          class="guest-check"
+          value="${g.name}"
+          ${isArrived ? "checked disabled" : ""}
+        >
 
-          <input
-            type="checkbox"
-            class="guest-check"
-            value="${g.name}"
-            ${isArrived ? "checked disabled" : ""}
-          >
+        <span class="guest-name">
+          ${g.name}
+        </span>
 
-      <span
-  class="guest-name"
-  style="
-    white-space:nowrap;
-    font-size:18px;
-  "
->
-  ${g.name}
-</span>
-
-        </div>
-
-        ${
-          isArrived
-          ? `
-           <span
-  class="guest-status"
-  style="
-    color:#22C55E;
-              font-weight:bold;
-            ">
-              已簽到
-            </span>
-          `
-          : `
-            <span style="
-              color:#999;
-            ">
-              未到
-            </span>
-          `
-        }
+        <span class="
+          ${isArrived
+            ? "guest-arrived"
+            : "guest-not-arrived"}
+        ">
+          ${isArrived ? "已簽到" : "未到"}
+        </span>
 
       </label>
     `;
