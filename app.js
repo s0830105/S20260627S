@@ -237,6 +237,22 @@ ${
 <h4>同桌貴賓（共 ${sameTableGuests.length} 位）</h4>
 
 ${guestList}
+
+<button
+  onclick="checkSelectedGuests()"
+  style="
+    margin-top:15px;
+    padding:10px 20px;
+    background:#4CAF50;
+    color:white;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+  "
+>
+✓ 簽到勾選人員
+</button>
+
 `;
 
 document.getElementById("mapContainer").innerHTML += `
