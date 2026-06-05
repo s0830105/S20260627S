@@ -105,6 +105,32 @@ const guestList = sameTableGuests
   .join("<br>");
 
 result.innerHTML = `
+  <div style="
+    color:#8B6B4A;
+    margin-bottom:20px;
+  ">
+    <h2 style="
+      margin-bottom:10px;
+      font-weight:400;
+    ">
+      歡迎蒞臨
+    </h2>
+
+    <div style="
+      font-size:28px;
+      margin-bottom:10px;
+    ">
+      培榮 ❤️ 紫菻
+    </div>
+
+    <div style="
+      color:#A68A6A;
+      font-size:14px;
+    ">
+      願您今天有個美好的午宴時光
+    </div>
+  </div>
+
   <h3>${guest.name}</h3>
 
   <p>桌號：${guest.table}</p>
