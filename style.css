@@ -71,26 +71,31 @@ button:hover{
 }
 
 #suggestions{
-    background:white;
-    border:1px solid #ddd;
-    max-height:200px;
-    overflow-y:auto;
+    background:#FFFDF9;
+    border:1px solid #D6C2A8;
+    border-radius:12px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.08);
 }
 
 .suggestion-item{
     padding:10px;
     cursor:pointer;
+    color:#6F5A43;
 }
-
 .suggestion-item:hover{
-    background:#f0f0f0;
+    background:#F3E6D8;
 }
 
 #stats{
     background:#FFFDF9;
-    border-radius:24px;
-    padding:18px;
-    box-shadow:0 4px 12px rgba(90,70,50,0.08);
+    border:1px solid #D6C2A8;
+    border-radius:20px;
+    padding:15px;
+    margin-bottom:20px;
+    text-align:center;
+    line-height:1.8;
+    font-weight:bold;
+    color:#5A4632;
 }
     
     border:1px solid #D6C2A8;
