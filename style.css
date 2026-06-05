@@ -136,9 +136,6 @@ button:hover{
 .highlight{
     position:absolute;
 
-    width:95px;
-    height:95px;
-
     border:5px solid #39ff88;
     border-radius:50%;
 
