@@ -113,22 +113,36 @@ const arrivedCount =
   ).length;
   
 const guestList = sameTableGuests
-  .map(g => `
-    <label style="
-      display:block;
-      margin:8px 0;
-      text-align:left;
-    ">
-      <input
-        type="checkbox"
-        class="guest-check"
-        value="${g.name}"
-      >
-      ${g.name}
-    </label>
-  `)
-  .join("");
+  .map(g => {
 
+    const isArrived =
+      !!allCheckins[g.name];
+
+    return `
+      <label style="
+        display:block;
+        margin:8px 0;
+        text-align:left;
+      ">
+        <input
+          type="checkbox"
+          class="guest-check"
+          value="${g.name}"
+          ${isArrived ? "checked disabled" : ""}
+        >
+
+        ${g.name}
+
+        ${
+          isArrived
+          ? '<span style="color:#22c55e;font-weight:bold;">（已簽到）</span>'
+          : ''
+        }
+
+      </label>
+    `;
+  })
+  .join("");
 result.innerHTML = `
  <div style="
   background:#FFFDF9;
