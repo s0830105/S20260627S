@@ -120,29 +120,60 @@ const guestList = sameTableGuests
 
     return `
       <label style="
-        display:block;
-        margin:8px 0;
-        text-align:left;
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        padding:10px 14px;
+        margin:6px 0;
+        background:#FFFDF9;
+        border:1px solid #E8DCCB;
+        border-radius:10px;
+        cursor:pointer;
       ">
-        <input
-          type="checkbox"
-          class="guest-check"
-          value="${g.name}"
-          ${isArrived ? "checked disabled" : ""}
-        >
 
-        ${g.name}
+        <div style="
+          display:flex;
+          align-items:center;
+          gap:10px;
+        ">
+
+          <input
+            type="checkbox"
+            class="guest-check"
+            value="${g.name}"
+            ${isArrived ? "checked disabled" : ""}
+          >
+
+          <span>
+            ${g.name}
+          </span>
+
+        </div>
 
         ${
           isArrived
-          ? '<span style="color:#22c55e;font-weight:bold;">（已簽到）</span>'
-          : ''
+          ? `
+            <span style="
+              color:#22C55E;
+              font-weight:bold;
+            ">
+              已簽到
+            </span>
+          `
+          : `
+            <span style="
+              color:#999;
+            ">
+              未到
+            </span>
+          `
         }
 
       </label>
     `;
   })
   .join("");
+  
 result.innerHTML = `
  <div style="
   background:#FFFDF9;
