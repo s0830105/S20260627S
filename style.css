@@ -15,11 +15,8 @@ body{
 }
 
 h1{
-    text-align:center;
-    color:#5A4632;
-    font-size:52px;
-    letter-spacing:4px;
-    font-weight:700;
+   font-family:'ZCOOL XiaoWei', serif;
+font-weight:400;
 }
 input{
     width:100%;
