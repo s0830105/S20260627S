@@ -23,7 +23,9 @@ h1{
 }
 
 input{
-    width:100%;
+    width:70%;
+    max-width:400px;
+
     padding:12px;
     box-sizing:border-box;
     margin-bottom:10px;
@@ -41,8 +43,10 @@ input::placeholder{
 }
 
 button{
-    width:100%;
-    padding:14px;
+    width:auto;
+    min-width:180px;
+
+    padding:14px 40px;
     cursor:pointer;
 
     background:#C7A17A;
