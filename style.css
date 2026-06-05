@@ -15,8 +15,12 @@ body{
 }
 
 h1{
-   font-family:'ZCOOL XiaoWei', serif;
-font-weight:400;
+    text-align:center;
+    color:#5A4632;
+    font-size:48px;
+    letter-spacing:8px;
+    font-weight:400;
+    margin-bottom:35px;
 }
 input{
     width:100%;
@@ -52,15 +56,18 @@ button{
 }
 
 button:hover{
-    background:#A88969;
-}
-
-button:hover{
-    background:#6F5A43;
+   button:hover{
+    opacity:0.9;
+    transform:translateY(-2px);
 }
 
 #result{
-    margin-top:20px;
+    #result{
+    background:#FFFDF9;
+    border-radius:24px;
+    padding:25px;
+    margin-top:25px;
+    box-shadow:0 4px 12px rgba(90,70,50,0.08);
 }
 
 #suggestions{
@@ -80,11 +87,10 @@ button:hover{
 }
 
 #stats{
-  background:#FFF8F0;
-  border:1px solid #D6C2A8;
-  color:#5A4632;
-  border-radius:20px;
-  box-shadow:0 4px 12px rgba(0,0,0,.08);
+    background:#FFFDF9;
+    border-radius:24px;
+    padding:18px;
+    box-shadow:0 4px 12px rgba(90,70,50,0.08);
 }
     
     border:1px solid #D6C2A8;
