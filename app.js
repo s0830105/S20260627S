@@ -173,18 +173,40 @@ ${
   ${guestList}
   `;
 
-document.getElementById("mapContainer").innerHTML +=`
+document.getElementById("mapContainer").innerHTML += `
+<div style="
+  background:#FFFDF9;
+  border-radius:20px;
+  padding:18px;
+  margin:20px 0;
+  text-align:center;
+  box-shadow:0 4px 12px rgba(90,70,50,0.08);
+">
   <div style="
-    font-size:28px;
+    font-size:18px;
+    color:#A68A6A;
+    margin-bottom:8px;
+  ">
+    📍 您的位置
+  </div>
+
+  <div style="
+    font-size:36px;
     font-weight:bold;
     color:#8B6B4A;
-    margin:20px 0;
-    text-align:center;
   ">
-    📍 第${guest.table}桌｜${guest.tableName}
+    第${guest.table}桌
   </div>
-`;
 
+  <div style="
+    font-size:24px;
+    color:#5A4632;
+    margin-top:5px;
+  ">
+    ${guest.tableName}
+  </div>
+</div>
+`;
 showMap(guest.table);
 setTimeout(() => {
   document.getElementById("mapContainer")
