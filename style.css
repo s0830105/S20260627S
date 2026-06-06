@@ -86,7 +86,11 @@ button:hover{
     box-shadow:
     0 6px 18px rgba(0,0,0,0.12);
 
-    overflow:hidden;
+    max-height:300px;
+    overflow-y:auto;
+    overflow-x:hidden;
+
+    -webkit-overflow-scrolling:touch;
 }
 
 .suggestion-item{
