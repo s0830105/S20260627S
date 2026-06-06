@@ -129,9 +129,20 @@ const guestList = sameTableGuests
           ${isArrived ? "checked disabled" : ""}
         >
 
-        <span class="guest-name">
-          ${g.name}
-        </span>
+       <span
+  class="guest-name"
+  onclick="
+    document.getElementById('searchInput').value='${g.name}';
+    searchGuest();
+  "
+  style="
+    cursor:pointer;
+    color:#8B6B4A;
+    font-weight:600;
+  "
+>
+  ${g.name}
+</span>
 
         <span class="
           ${isArrived
