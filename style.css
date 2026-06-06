@@ -66,16 +66,12 @@ button:hover{
     transform:translateY(-2px);
 }
 
-#result{
-    background:#FFFDF9;
-    border:1px solid #D6C2A8;
-    border-radius:24px;
-    padding:25px;
-    margin-top:25px;
-    color:#5A4632;
+#result:empty{
+    display:none;
+}
 
-    box-shadow:
-    0 4px 12px rgba(90,70,50,0.08);
+#result{
+    color:#5A4632;
 }
 
 #suggestions{
