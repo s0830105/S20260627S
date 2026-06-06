@@ -1,4 +1,4 @@
-//婚宴正式版 V1（可還原）
+// V1 完整版（2026-06-06）
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-app.js";
 
 import {
