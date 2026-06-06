@@ -499,7 +499,10 @@ window.toggleAllGuests =
 loadStats();
 
 function showMap(table){
-
+if(!table){
+  return;
+}
+  
   table = Number(table);
 const positions = {
 
