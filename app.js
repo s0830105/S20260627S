@@ -299,7 +299,7 @@ ${guestList}
 
 `;
 
-document.getElementById("mapContainer").innerHTML += `
+document.getElementById("mapContainer").innerHTML="";
 <div style="
   background:#FFFDF9;
   border-radius:20px;
@@ -499,6 +499,21 @@ window.toggleAllGuests =
 loadStats();
 
 function showMap(table){
+
+  if(!table){
+    return;
+  }
+
+  table = Number(table);
+
+  const pos = positions[table];
+
+  if(!pos){
+    return;
+  }
+
+  ...
+}
 if(!table){
   return;
 }
