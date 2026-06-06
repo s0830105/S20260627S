@@ -501,58 +501,62 @@ loadStats();
 function showMap(table){
 
   if(!table){
+    document.getElementById("mapContainer").innerHTML = "";
     return;
   }
 
   table = Number(table);
 
+  const positions = {
+
+    1:{ top:"27%", left:"50%" },
+
+    2:{ top:"43%", left:"82%" },
+
+    3:{ top:"43%", left:"18%" },
+
+    4:{ top:"66%", left:"18%" },
+
+    5:{ top:"66%", left:"82%" },
+
+    6:{ top:"89%", left:"18%" },
+
+    7:{ top:"89%", left:"50%" },
+
+    8:{ top:"89%", left:"82%" }
+
+  };
+
+  const sizes = {
+
+    1:130,
+
+    2:95,
+
+    3:95,
+
+    4:95,
+
+    5:95,
+
+    6:95,
+
+    7:95,
+
+    8:95
+
+  };
+
   const pos = positions[table];
+
+  const size = sizes[table];
 
   if(!pos){
+    document.getElementById("mapContainer").innerHTML = "";
     return;
   }
 
-  ...
-}
-if(!table){
-  return;
-}
-  
-  table = Number(table);
-const positions = {
-
-  1:{ top:"27%", left:"50%" },
-
-  2:{ top:"43%", left:"82%" },
-
-  3:{ top:"43%", left:"18%" },
-
-  4:{ top:"66%", left:"18%" },
-
-  5:{ top:"66%", left:"82%" },
-
-  6:{ top:"89%", left:"18%" },
-
-  7:{ top:"89%", left:"50%" },
-
-  8:{ top:"89%", left:"82%" }
-
-};
-const sizes = {
-  1: 130,
-  2: 95,
-  3: 95,
-  4: 95,
-  5: 95,
-  6: 95,
-  7: 95,
-  8: 95
-};
-  const pos = positions[table];
-const size = sizes[table];
-console.log("桌號=",table);
-console.log("位置=",pos);
-  document.getElementById("mapContainer").innerHTML= `
+  document.getElementById("mapContainer").innerHTML = `
     <div class="map-wrapper">
 
       <img
@@ -560,15 +564,16 @@ console.log("位置=",pos);
         class="floor-map"
       >
 
-    <div
-  class="highlight"
-  style="
-    width:${size}px;
-    height:${size}px;
-    top:calc(${pos.top} - 8px);
-    left:calc(${pos.left} - 8px);
-  ">
-</div>
+      <div
+        class="highlight"
+        style="
+          width:${size}px;
+          height:${size}px;
+          top:calc(${pos.top} - 8px);
+          left:calc(${pos.left} - 8px);
+        ">
+      </div>
+
     </div>
   `;
 }
